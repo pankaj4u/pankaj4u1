@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ICC Cricket Rankings</title>
+  <style>
+    /* Add your CSS styles here */
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+    
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+    
+    .tab {
+      overflow: hidden;
+      border-bottom: 1px solid #ccc;
+    }
+    
+    .tab button {
+      background-color: inherit;
+      float: left;
+      border: none;
+      outline: none;
+      cursor: pointer;
+      padding: 10px 20px;
+      transition: 0.3s;
+    }
+    
+    .tab button.active {
+      background-color: #ccc;
+    }
+    
+    .tabcontent {
+      padding: 6px 12px;
+      border-top: none;
+    }
+    
+    table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+    
+    th, td {
+      padding: 8px;
+      text-align: left;
+      border-bottom: 1px solid #ddd;
+    }
+    
+    th {
+      background-color: #f2f2f2;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>ICC Cricket Rankings</h1>
+    
+    <div class="tab">
+      <button class="tablinks active" onclick="openTab(event, 'batting')">Batting</button>
+      <button class="tablinks" onclick="openTab(event, 'bowling')">Bowling</button>
+      <button class="tablinks" onclick="openTab(event, 'allrounders')">All-rounders</button>
+      <button class="tablinks" onclick="openTab(event, 'teams')">Teams</button>
+    </div>
+    
+    <div id="batting" class="tabcontent" style="display: block;">
+      <h2>Batting Rankings</h2>
+      <table id="battingTable">
+        <thead>
+          <tr>
+            <th>Rank</th>
+            <th>Player</th>
+            <th>Rating</th>
+            <th>Career Best Rating</th>
+          </tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+    </div>
+    
+    <div id="bowling" class="tabcontent">
+      <h2>Bowling Rankings</h2>
+      <table id="bowlingTable">
+        <thead>
+          <tr>
+            <th>Rank</th>
+            <th>Player</th>
+            <th>Rating</th>
+            <th>Career Best Rating</th>
+          </tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+    </div>
+    
+    <div id="allrounders" class="tabcontent">
+      <h2>All-rounders Rankings</h2>
+      <table id="allroundersTable">
+        <thead>
+          <tr>
+            <th>Rank</th>
+            <th>Player</th>
+            <th>Rating</th>
+            <th>Career Best Rating</th>
+          </tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+    </div>
+    
+    <div id="teams" class="tabcontent">
+      <h2>Teams Rankings</h2>
+      <table id="teamsTable">
+        <thead>
+          <tr>
+            <th>Rank</th>
+            <th>Team</th>
+            <th>Matches</th>
+            <th>Points</th>
+            <th>Rating</th>
+          </tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+    </div>
+  </div>
+  
+  <script>
+    // Add your JavaScript code here
+    function openTab(evt, tabName) {
+      var i, tabcontent, tablinks;
+      tabcontent = document.getElementsByClassName("tabcontent");
+      for (i = 0; i < tabcontent.length; i++) {
+        tabcontent[i].style.display = "none";
+      }
+      tablinks = document.getElementsByClassName("tablinks");
+      for (i = 0; i < tablinks.length; i++) {
+        tablinks[i].className = tablinks[i].className.replace(" active", "");
+      }
+      document.getElementById(tabName).style.display = "block";
+      evt.currentTarget.className += " active";
+    }
+    
+    // Fetch data and populate tables
+    fetch('https://api.example.com/icc-rankings')
+      .then(response => response.json())
+      .then(data => {
+        // Populate batting table
+        const battingTable = document.getElementById('battingTable').getElementsByTagName('tbody')[0];
+        data.batting.forEach(player => {
+          const row = battingTable.insertRow();
+          row.insertCell().textContent = player.rank;
+          row.insertCell().textContent = player.name;
+          row.insertCell().textContent = player.rating;
+          row.insertCell().textContent = player.careerBestRating;
+        });
+        
+        // Populate bowling table
+        // ...
+        
+        // Populate all-rounders table
+        // ...
+        
+        // Populate teams table
+        // ...
+      })
+      .catch(error => console.error('Error fetching data:', error));
+  </script>
+</body>
+</html>
