@@ -5,11 +5,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>ICC Cricket Rankings</title>
   <style>
-    /* Add your CSS styles here */
     body {
       font-family: Arial, sans-serif;
       margin: 0;
-      padding: 0;
+      padding: 0 15px; /* Left and right padding for a native look */
     }
     
     .container {
@@ -42,9 +41,19 @@
       border-top: none;
     }
     
+    h3 {
+      cursor: pointer;
+      color: #007BFF;
+    }
+    
+    h3:hover {
+      text-decoration: underline;
+    }
+    
     table {
       width: 100%;
       border-collapse: collapse;
+      margin-top: 10px;
     }
     
     th, td {
@@ -63,76 +72,74 @@
     <h1>ICC Cricket Rankings</h1>
     
     <div class="tab">
-      <button class="tablinks active" onclick="openTab(event, 'batting')">Batting</button>
-      <button class="tablinks" onclick="openTab(event, 'bowling')">Bowling</button>
-      <button class="tablinks" onclick="openTab(event, 'allrounders')">All-rounders</button>
-      <button class="tablinks" onclick="openTab(event, 'teams')">Teams</button>
+      <button class="tablinks active" onclick="openTab(event, 'male')">Male</button>
+      <button class="tablinks" onclick="openTab(event, 'female')">Female</button>
     </div>
     
-    <div id="batting" class="tabcontent" style="display: block;">
-      <h2>Batting Rankings</h2>
-      <table id="battingTable">
-        <thead>
-          <tr>
-            <th>Rank</th>
-            <th>Player</th>
-            <th>Rating</th>
-            <th>Career Best Rating</th>
-          </tr>
-        </thead>
-        <tbody></tbody>
-      </table>
+    <div id="male" class="tabcontent" style="display: block;">
+      <h2>Male Rankings</h2>
+
+      <h3 onclick="toggleTable('maleTestTeams')">Test Team Rankings</h3>
+      <div id='maleTestTeams' style='display:none;'>
+        <table>
+          <tr><th>Rank</th><th>Team</th><th>Rating</th></tr>
+          <tr><td>1</td><td>India</td><td>120</td></tr>
+          <tr><td>2</td><td>Australia</td><td>115</td></tr>
+        </table>
+      </div>
+
+      <h3 onclick="toggleTable('maleTestBatters')">Test Batter Rankings</h3>
+      <div id='maleTestBatters' style='display:none;'>
+        <table>
+          <tr><th>Rank</th><th>Player</th><th>Rating</th></tr>
+          <tr><td>1</td><td>Joe Root</td><td>900</td></tr>
+          <tr><td>2</td><td>Steve Smith</td><td>895</td></tr>
+        </table>
+      </div>
+
+      <h3 onclick="toggleTable('maleTestBowlers')">Test Bowler Rankings</h3>
+      <div id='maleTestBowlers' style='display:none;'>
+        <table>
+          <tr><th>Rank</th><th>Player</th><th>Rating</th></tr>
+          <tr><td>1</td><td>Pat Cummins</td><td>890</td></tr>
+          <tr><td>2</td><td>Jasprit Bumrah</td><td>885</td></tr>
+        </table>
+      </div>
     </div>
     
-    <div id="bowling" class="tabcontent">
-      <h2>Bowling Rankings</h2>
-      <table id="bowlingTable">
-        <thead>
-          <tr>
-            <th>Rank</th>
-            <th>Player</th>
-            <th>Rating</th>
-            <th>Career Best Rating</th>
-          </tr>
-        </thead>
-        <tbody></tbody>
-      </table>
-    </div>
-    
-    <div id="allrounders" class="tabcontent">
-      <h2>All-rounders Rankings</h2>
-      <table id="allroundersTable">
-        <thead>
-          <tr>
-            <th>Rank</th>
-            <th>Player</th>
-            <th>Rating</th>
-            <th>Career Best Rating</th>
-          </tr>
-        </thead>
-        <tbody></tbody>
-      </table>
-    </div>
-    
-    <div id="teams" class="tabcontent">
-      <h2>Teams Rankings</h2>
-      <table id="teamsTable">
-        <thead>
-          <tr>
-            <th>Rank</th>
-            <th>Team</th>
-            <th>Matches</th>
-            <th>Points</th>
-            <th>Rating</th>
-          </tr>
-        </thead>
-        <tbody></tbody>
-      </table>
+    <div id="female" class="tabcontent" style="display: none;">
+      <h2>Female Rankings</h2>
+
+      <h3 onclick="toggleTable('femaleTestTeams')">Test Team Rankings</h3>
+      <div id='femaleTestTeams' style='display:none;'>
+        <table>
+          <tr><th>Rank</th><th>Team</th><th>Rating</th></tr>
+          <tr><td>1</td><td>Australia</td><td>130</td></tr>
+          <tr><td>2</td><td>India</td><td>125</td></tr>
+        </table>
+      </div>
+
+      <h3 onclick="toggleTable('femaleTestBatters')">Test Batter Rankings</h3>
+      <div id='femaleTestBatters' style='display:none;'>
+        <table>
+          <tr><th>Rank</th><th>Player</th><th>Rating</th></tr>
+          <tr><td>1</td><td>Ellyse Perry</td><td>920</td></tr>
+          <tr><td>2</td><td>Sophie Devine</td><td>910</td></tr>
+        </table>
+      </div>
+
+      <h3 onclick="toggleTable('femaleTestBowlers')">Test Bowler Rankings</h3>
+      <div id='femaleTestBowlers' style='display:none;'>
+        <table>
+          <tr><th>Rank</th><th>Player</th><th>Rating</th></tr>
+          <tr><td>1</td><td>Jess Jonassen</td><td>880</td></tr>
+          <tr><td>2</td><td>Shabnim Ismail</td><td>870</td></tr>
+        </table>
+      </div>
     </div>
   </div>
   
   <script>
-    // Add your JavaScript code here
     function openTab(evt, tabName) {
       var i, tabcontent, tablinks;
       tabcontent = document.getElementsByClassName("tabcontent");
@@ -146,31 +153,15 @@
       document.getElementById(tabName).style.display = "block";
       evt.currentTarget.className += " active";
     }
-    
-    // Fetch data and populate tables
-    fetch('https://api.example.com/icc-rankings')
-      .then(response => response.json())
-      .then(data => {
-        // Populate batting table
-        const battingTable = document.getElementById('battingTable').getElementsByTagName('tbody')[0];
-        data.batting.forEach(player => {
-          const row = battingTable.insertRow();
-          row.insertCell().textContent = player.rank;
-          row.insertCell().textContent = player.name;
-          row.insertCell().textContent = player.rating;
-          row.insertCell().textContent = player.careerBestRating;
-        });
-        
-        // Populate bowling table
-        // ...
-        
-        // Populate all-rounders table
-        // ...
-        
-        // Populate teams table
-        // ...
-      })
-      .catch(error => console.error('Error fetching data:', error));
+
+    function toggleTable(tableId) {
+      var table = document.getElementById(tableId);
+      if (table.style.display === "none") {
+        table.style.display = "block";
+      } else {
+        table.style.display = "none";
+      }
+    }
   </script>
 </body>
 </html>
