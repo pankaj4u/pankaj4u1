@@ -1,246 +1,245 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>ICC Cricket Rankings</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-      background-color: #f0f0f0;
-    }
-    
-    .container {
-      max-width: 800px;
-      margin: 0 auto;
-      background-color: #ffffff;
-      border-radius: 8px;
-      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-    }
-    
-    .tab {
-      overflow: hidden;
-      border-bottom: 2px solid #4CAF50;
-      margin-bottom: 20px;
-    }
-    
-    .tab button {
-      background-color: inherit;
-      float: left;
-      border: none;
-      outline: none;
-      cursor: pointer;
-      padding: 15px 20px;
-      font-size: 16px;
-      color: #4CAF50;
-      transition: 0.3s;
-    }
-    
-    .tab button.active {
-      background-color: #4CAF50;
-      color: white;
-      border-radius: 5px 5px 0 0;
-    }
-    
-    .tabcontent {
-      padding: 20px;
-      border-top: none;
-      background-color: #f1f1f1;
-      border-radius: 0 0 8px 8px;
-    }
-    
-    .ranking-header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 10px;
-      border-radius: 5px;
-      color: white;
-      margin-bottom: 10px;
-    }
-    
-    .male-color {
-      background-color: #007BFF;
-    }
-    
-    .female-color {
-      background-color: #FF69B4;
-    }
-    
-    .team-color {
-      background-color: #4CAF50;
-    }
-    
-    .batter-color {
-      background-color: #FFA500;
-    }
-    
-    .bowler-color {
-      background-color: #FF4500;
-    }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cricket Rankings</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            background-color: #f0f0f0;
+        }
 
-    h3 {
-      cursor: pointer;
-      color: white;
-      display: flex;
-      align-items: center;
-      margin: 0;
-    }
-    
-    h3 i {
-      margin-right: 10px;
-    }
-    
-    table {
-      width: 100%;
-      border-collapse: collapse;
-      margin-top: 10px;
-    }
-    
-    th, td {
-      padding: 12px;
-      text-align: left;
-      border-bottom: 1px solid #ddd;
-    }
-    
-    th {
-      background-color: #4CAF50;
-      color: white;
-    }
-    
-    tr:nth-child(even) {
-      background-color: #f2f2f2;
-    }
-    
-    tr:hover {
-      background-color: #e9ecef;
-    }
-    
-    .expand-button {
-      background-color: #fff;
-      border: none;
-      color: #007BFF;
-      cursor: pointer;
-      font-size: 18px;
-      padding: 5px 10px;
-      border-radius: 5px;
-      transition: background-color 0.3s;
-    }
+        .container {
+            margin: 0 auto;
+            background-color: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
 
-    .expand-button:hover {
-      background-color: #e0e0e0;
-    }
-  </style>
+        .tab {
+            overflow: hidden;
+            border-bottom: 2px solid #4CAF50;
+            margin-bottom: 5px;
+        }
+
+        .tab button {
+            background-color: inherit;
+            float: left;
+            border: none;
+            outline: none;
+            cursor: pointer;
+            padding: 15px 20px;
+            font-size: 16px;
+            color: #4CAF50;
+            transition: 0.3s;
+        }
+
+        .tab button.active {
+            background-color: #4CAF50;
+            color: white;
+            border-radius: 5px 5px 0 0;
+        }
+
+        .tabcontent {
+            padding: 2px;
+            border-top: none;
+            background-color: #f1f1f1;
+            border-radius: 0 0 8px 8px;
+        }
+
+        .ranking-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px;
+            border-radius: 5px;
+            color: white;
+            margin-bottom: 10px;
+        }
+
+        .male-color {
+            background-color: #007BFF;
+        }
+
+        .female-color {
+            background-color: #FF69B4;
+        }
+
+        .team-color {
+            background-color: #4CAF50;
+        }
+
+        .batter-color {
+            background-color: #FFA500;
+        }
+
+        .bowler-color {
+            background-color: #FF4500;
+        }
+
+        h3 {
+            cursor: pointer;
+            color: white;
+            display: flex;
+            align-items: center;
+            margin: 0;
+        }
+
+        h3 i {
+            margin-right: 10px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 10px;
+        }
+
+        th, td {
+            padding: 12px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+
+        th {
+            background-color: #4CAF50;
+            color: white;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+
+        tr:hover {
+            background-color: #e9ecef;
+        }
+
+        .expand-button {
+            background-color: #fff;
+            border: none;
+            color: #007BFF;
+            cursor: pointer;
+            font-size: 18px;
+            padding: 5px 10px;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+
+        .expand-button:hover {
+            background-color: #e0e0e0;
+        }
+    </style>
 </head>
 <body>
-  <div class="container">
+<div class="container">
     <div class="tab">
-      <button class="tablinks active" onclick="openTab(event, 'male')"><i class="fas fa-male"></i> Male</button>
-      <button class="tablinks" onclick="openTab(event, 'female')"><i class="fas fa-female"></i> Female</button>
+        <button class="tablinks active" onclick="openTab(event, 'male')"><i class="fas fa-male"></i> Male</button>
+        <button class="tablinks" onclick="openTab(event, 'female')"><i class="fas fa-female"></i> Female</button>
     </div>
-    
+
     <div id="male" class="tabcontent" style="display: block;">
-      <div class="ranking-header male-color">
-        <h3>Test Team Rankings</h3>
-        <button class="expand-button" onclick="toggleTable('maleTestTeams')">+</button>
-      </div>
-      <div id='maleTestTeams' style='display:none;'>
-        <table>
-          <tr><th>Rank</th><th>Team</th><th>Rating</th></tr>
-          <tr><td>1</td><td>India</td><td>120</td></tr>
-          <tr><td>2</td><td>Australia</td><td>115</td></tr>
-        </table>
-      </div>
+        <div class="ranking-header male-color">
+            <h3>Test Team Rankings</h3>
+            <button class="expand-button" onclick="toggleTable('maleTestTeams')">+</button>
+        </div>
+        <div id='maleTestTeams' style='display:none;'>
+            <table>
+                <tr><th>Rank</th><th>Team</th><th>Rating</th></tr>
+                <tr><td>1</td><td>India</td><td>120</td></tr>
+                <tr><td>2</td><td>Australia</td><td>115</td></tr>
+            </table>
+        </div>
 
-      <div class="ranking-header batter-color">
-        <h3>Test Batter Rankings</h3>
-        <button class="expand-button" onclick="toggleTable('maleTestBatters')">+</button>
-      </div>
-      <div id='maleTestBatters' style='display:none;'>
-        <table>
-          <tr><th>Rank</th><th>Player</th><th>Rating</th></tr>
-          <tr><td>1</td><td>Joe Root</td><td>900</td></tr>
-          <tr><td>2</td><td>Steve Smith</td><td>895</td></tr>
-        </table>
-      </div>
+        <div class="ranking-header batter-color">
+            <h3>Test Batter Rankings</h3>
+            <button class="expand-button" onclick="toggleTable('maleTestBatters')">+</button>
+        </div>
+        <div id='maleTestBatters' style='display:none;'>
+            <table>
+                <tr><th>Rank</th><th>Player</th><th>Rating</th></tr>
+                <tr><td>1</td><td>Joe Root</td><td>900</td></tr>
+                <tr><td>2</td><td>Steve Smith</td><td>895</td></tr>
+            </table>
+        </div>
 
-      <div class="ranking-header bowler-color">
-        <h3>Test Bowler Rankings</h3>
-        <button class="expand-button" onclick="toggleTable('maleTestBowlers')">+</button>
-      </div>
-      <div id='maleTestBowlers' style='display:none;'>
-        <table>
-          <tr><th>Rank</th><th>Player</th><th>Rating</th></tr>
-          <tr><td>1</td><td>Pat Cummins</td><td>890</td></tr>
-          <tr><td>2</td><td>Jasprit Bumrah</td><td>885</td></tr>
-        </table>
-      </div>
+        <div class="ranking-header bowler-color">
+            <h3>Test Bowler Rankings</h3>
+            <button class="expand-button" onclick="toggleTable('maleTestBowlers')">+</button>
+        </div>
+        <div id='maleTestBowlers' style='display:none;'>
+            <table>
+                <tr><th>Rank</th><th>Player</th><th>Rating</th></tr>
+                <tr><td>1</td><td>Pat Cummins</td><td>890</td></tr>
+                <tr><td>2</td><td>Jasprit Bumrah</td><td>885</td></tr>
+            </table>
+        </div>
     </div>
-    
+
     <div id="female" class="tabcontent" style="display: none;">
-      <div class="ranking-header female-color">
-        <h3>Test Team Rankings</h3>
-        <button class="expand-button" onclick="toggleTable('femaleTestTeams')">+</button>
-      </div>
-      <div id='femaleTestTeams' style='display:none;'>
-        <table>
-          <tr><th>Rank</th><th>Team</th><th>Rating</th></tr>
-          <tr><td>1</td><td>Australia</td><td>130</td></tr>
-          <tr><td>2</td><td>India</td><td>125</td></tr>
-        </table>
-      </div>
+        <div class="ranking-header female-color">
+            <h3>Test Team Rankings</h3>
+            <button class="expand-button" onclick="toggleTable('femaleTestTeams')">+</button>
+        </div>
+        <div id='femaleTestTeams' style='display:none;'>
+            <table>
+                <tr><th>Rank</th><th>Team</th><th>Rating</th></tr>
+                <tr><td>1</td><td>Australia</td><td>130</td></tr>
+                <tr><td>2</td><td>India</td><td>125</td></tr>
+            </table>
+        </div>
 
-      <div class="ranking-header batter-color">
-        <h3>Test Batter Rankings</h3>
-        <button class="expand-button" onclick="toggleTable('femaleTestBatters')">+</button>
-      </div>
-      <div id='femaleTestBatters' style='display:none;'>
-        <table>
-          <tr><th>Rank</th><th>Player</th><th>Rating</th></tr>
-          <tr><td>1</td><td>Ellyse Perry</td><td>920</td></tr>
-          <tr><td>2</td><td>Sophie Devine</td><td>910</td></tr>
-        </table>
-      </div>
+        <div class="ranking-header batter-color">
+            <h3>Test Batter Rankings</h3>
+            <button class="expand-button" onclick="toggleTable('femaleTestBatters')">+</button>
+        </div>
+        <div id='femaleTestBatters' style='display:none;'>
+            <table>
+                <tr><th>Rank</th><th>Player</th><th>Rating</th></tr>
+                <tr><td>1</td><td>Ellyse Perry</td><td>920</td></tr>
+                <tr><td>2</td><td>Sophie Devine</td><td>910</td></tr>
+            </table>
+        </div>
 
-      <div class="ranking-header bowler-color">
-        <h3>Test Bowler Rankings</h3>
-        <button class="expand-button" onclick="toggleTable('femaleTestBowlers')">+</button>
-      </div>
-      <div id='femaleTestBowlers' style='display:none;'>
-        <table>
-          <tr><th>Rank</th><th>Player</th><th>Rating</th></tr>
-          <tr><td>1</td><td>Jess Jonassen</td><td>880</td></tr>
-          <tr><td>2</td><td>Shabnim Ismail</td><td>870</td></tr>
-        </table>
-      </div>
+        <div class="ranking-header bowler-color">
+            <h3>Test Bowler Rankings</h3>
+            <button class="expand-button" onclick="toggleTable('femaleTestBowlers')">+</button>
+        </div>
+        <div id='femaleTestBowlers' style='display:none;'>
+            <table>
+                <tr><th>Rank</th><th>Player</th><th>Rating</th></tr>
+                <tr><td>1</td><td>Jess Jonassen</td><td>880</td></tr>
+                <tr><td>2</td><td>Shabnim Ismail</td><td>870</td></tr>
+            </table>
+        </div>
     </div>
-  </div>
-  
-  <script>
+</div>
+
+<script>
     function openTab(evt, tabName) {
-      var i, tabcontent, tablinks;
-      tabcontent = document.getElementsByClassName("tabcontent");
-      for (i = 0; i < tabcontent.length; i++) {
-        tabcontent[i].style.display = "none";
-      }
-      tablinks = document.getElementsByClassName("tablinks");
-      for (i = 0; i < tablinks.length; i++) {
-        tablinks[i].className = tablinks[i].className.replace(" active", "");
-      }
-      document.getElementById(tabName).style.display = "block";
-      evt.currentTarget.className += " active";
+        var i, tabcontent, tablinks;
+        tabcontent = document.getElementsByClassName("tabcontent");
+        for (i = 0; i < tabcontent.length; i++) {
+            tabcontent[i].style.display = "none";
+        }
+        tablinks = document.getElementsByClassName("tablinks");
+        for (i = 0; i < tablinks.length; i++) {
+            tablinks[i].className = tablinks[i].className.replace(" active", "");
+        }
+        document.getElementById(tabName).style.display = "block";
+        evt.currentTarget.className += " active";
     }
 
     function toggleTable(tableId) {
-      var table = document.getElementById(tableId);
-      if (table.style.display === "none") {
-        table.style.display = "block";
-      } else {
-        table.style.display = "none";
-      }
+        var table = document.getElementById(tableId);
+        if (table.style.display === "none") {
+            table.style.display = "block";
+        } else {
+            table.style.display = "none";
+        }
     }
-  </script>
+</script>
 </body>
 </html>
