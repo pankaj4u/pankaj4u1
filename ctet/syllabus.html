@@ -1,13 +1,13 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="hi">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CTET Paper 1 Syllabus</title>
+    <title>सीटेट पेपर 1 सिलेबस (हिन्दी)</title>
     <style>
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            line-height: 1.6;
+            font-family: 'Noto Sans Devanagari', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Added Devanagari font */
+            line-height: 1.7; /* Slightly increased for Hindi readability */
             color: #333;
             background-color: #f9f9f9;
             margin: 0;
@@ -113,7 +113,7 @@
             color: #28a745; /* Success Green */
             font-weight: bold;
             font-size: 1.1em;
-            top: 0px; /* Adjust vertical position if needed */
+            top: 2px; /* Adjust vertical position if needed for Hindi script */
         }
         
         .note {
@@ -129,6 +129,7 @@
         .question-count {
             font-weight: bold;
             color: #dc3545; /* Red for emphasis */
+            font-family: monospace; /* Ensure numbers align well */
         }
         
         .topic-split {
@@ -169,6 +170,7 @@
                 padding-left: 50%; /* Space for label */
                  white-space: normal; /* Allow text wrap */
                  text-align: right; /* Align value to the right */
+                 min-height: 24px; /* Ensure space for label even if cell is empty */
             }
             td::before {
                 /* Now like a table header label */
@@ -182,9 +184,23 @@
                 content: attr(data-label); /* Use data-label attribute */
                  color: #0056b3; /* Label color */
             }
-             td[data-label="Section"] { font-size: 1.1em; background-color: #f2f8ff; font-weight: bold; text-align: left; padding-left: 10px;} /* Style the first "cell" like a heading */
-             td[data-label="Topics / Breakdown"], td[data-label="No. of Questions"] { text-align: left; padding-left: 10px;} /* Align other cells */
-             td[data-label="Topics / Breakdown"]::before, td[data-label="No. of Questions"]::before { display: none; } /* Hide labels for these */
+             /* Style the first "cell" like a heading */
+             td[data-label="खंड/विषय"] { 
+                 font-size: 1.1em; 
+                 background-color: #f2f8ff; 
+                 font-weight: bold; 
+                 text-align: left; 
+                 padding-left: 10px;
+             } 
+             /* Align other cells */
+             td[data-label="विषय / विवरण"], td[data-label="प्रश्नों की संख्या"] { 
+                 text-align: left; 
+                 padding-left: 10px;
+             } 
+             /* Hide labels for these */
+             td[data-label="विषय / विवरण"]::before, td[data-label="प्रश्नों की संख्या"]::before { 
+                 display: none; 
+             } 
         }
 
     </style>
@@ -192,253 +208,253 @@
 <body>
     <div class="container">
 
-        <h1>CTET Paper 1 Syllabus Guide (For Class 10 Students!)</h1>
+        <h1>सीटेट पेपर 1 सिलेबस गाइड (कक्षा 10 के छात्रों के लिए!)</h1>
 
-        <p>Hey future teachers! If you're aiming to teach Classes 1 to 5, you'll need to clear the CTET Paper 1 exam. Knowing what's in the syllabus is like having a map for your preparation journey. Let's break it down into simple parts so you know exactly what to focus on.</p>
+        <p>नमस्ते भावी शिक्षकों! अगर आप कक्षा 1 से 5 तक पढ़ाने का लक्ष्य रखते हैं, तो आपको सीटेट पेपर 1 परीक्षा पास करनी होगी। यह जानना कि सिलेबस में क्या है, आपकी तैयारी की यात्रा के लिए एक नक्शे की तरह है। चलिए इसे सरल भागों में बांटते हैं ताकि आप जान सकें कि वास्तव में किस पर ध्यान केंद्रित करना है।</p>
 
-        <p>The exam tests not just what you know, but also how you would teach it to young children (ages 6-11). Each correct answer gets you 1 mark, and good news – there’s no negative marking!</p>
+        <p>यह परीक्षा न केवल यह परखती है कि आप क्या जानते हैं, बल्कि यह भी कि आप छोटे बच्चों (6-11 वर्ष की आयु) को कैसे पढ़ाएंगे। प्रत्येक सही उत्तर के लिए आपको 1 अंक मिलता है, और अच्छी खबर यह है - कोई नेगेटिव मार्किंग नहीं है!</p>
 
-        <h2>Exam Sections at a Glance</h2>
+        <h2>परीक्षा के खंड एक नज़र में</h2>
 
         <table>
             <thead>
                 <tr>
-                    <th>Section</th>
-                    <th>Topics / Breakdown</th>
-                    <th>No. of Questions</th>
+                    <th>खंड/विषय</th>
+                    <th>विषय / विवरण</th>
+                    <th>प्रश्नों की संख्या</th>
                 </tr>
             </thead>
             <tbody>
                 <tr>
-                    <td data-label="Section">Child Development & Pedagogy (CDP)</td>
-                    <td data-label="Topics / Breakdown">
-                        Understanding child growth, learning, and special needs.
+                    <td data-label="खंड/विषय">बाल विकास और शिक्षाशास्त्र (CDP)</td>
+                    <td data-label="विषय / विवरण">
+                        बच्चों की वृद्धि, सीखने और विशेष जरूरतों को समझना।
                         <div class="topic-split">
-                           • Child Development: 15 Qs <br>
-                           • Inclusive Education: 5 Qs <br>
-                           • Learning & Teaching Methods: 10 Qs
+                           • बाल विकास: 15 प्रश्न <br>
+                           • समावेशी शिक्षा: 5 प्रश्न <br>
+                           • सीखना और सिखाने के तरीके: 10 प्रश्न
                         </div>
                     </td>
-                    <td data-label="No. of Questions" class="question-count">30</td>
+                    <td data-label="प्रश्नों की संख्या" class="question-count">30</td>
                 </tr>
                 <tr>
-                    <td data-label="Section">Language 1</td>
-                    <td data-label="Topics / Breakdown">
-                        Focuses on your main teaching language skills.
+                    <td data-label="खंड/विषय">भाषा 1</td>
+                    <td data-label="विषय / विवरण">
+                        आपकी मुख्य शिक्षण भाषा कौशल पर केंद्रित।
                         <div class="topic-split">
-                           • Reading Comprehension: 15 Qs <br>
-                           • How to Teach Language: 15 Qs
+                           • भाषा अवबोधन (Comprehension): 15 प्रश्न <br>
+                           • भाषा कैसे सिखाएं (Pedagogy): 15 प्रश्न
                         </div>
                     </td>
-                    <td data-label="No. of Questions" class="question-count">30</td>
+                    <td data-label="प्रश्नों की संख्या" class="question-count">30</td>
                 </tr>
                 <tr>
-                    <td data-label="Section">Language 2</td>
-                    <td data-label="Topics / Breakdown">
-                        Tests skills in a second language (different from Language 1).
+                    <td data-label="खंड/विषय">भाषा 2</td>
+                    <td data-label="विषय / विवरण">
+                        दूसरी भाषा (भाषा 1 से भिन्न) में कौशल का परीक्षण।
                         <div class="topic-split">
-                           • Reading Comprehension: 15 Qs <br>
-                           • How to Teach Language: 15 Qs
+                           • भाषा अवबोधन (Comprehension): 15 प्रश्न <br>
+                           • भाषा कैसे सिखाएं (Pedagogy): 15 प्रश्न
                         </div>
                     </td>
-                    <td data-label="No. of Questions" class="question-count">30</td>
+                    <td data-label="प्रश्नों की संख्या" class="question-count">30</td>
                 </tr>
                 <tr>
-                    <td data-label="Section">Mathematics</td>
-                    <td data-label="Topics / Breakdown">
-                        Basic math concepts (like from Classes 1-5) and how to teach them.
+                    <td data-label="खंड/विषय">गणित</td>
+                    <td data-label="विषय / विवरण">
+                        बुनियादी गणित अवधारणाएँ (कक्षा 1-5 की तरह) और उन्हें कैसे सिखाया जाए।
                          <div class="topic-split">
-                           • Math Content: 15 Qs <br>
-                           • How to Teach Math: 15 Qs
+                           • गणित विषय-वस्तु (Content): 15 प्रश्न <br>
+                           • गणित कैसे सिखाएं (Pedagogy): 15 प्रश्न
                         </div>
                     </td>
-                    <td data-label="No. of Questions" class="question-count">30</td>
+                    <td data-label="प्रश्नों की संख्या" class="question-count">30</td>
                 </tr>
                  <tr>
-                    <td data-label="Section">Environmental Studies (EVS)</td>
-                    <td data-label="Topics / Breakdown">
-                        Everyday science & social science topics (food, water, family etc.) and teaching methods.
+                    <td data-label="खंड/विषय">पर्यावरण अध्ययन (EVS)</td>
+                    <td data-label="विषय / विवरण">
+                        रोजमर्रा के विज्ञान और सामाजिक विज्ञान के विषय (भोजन, पानी, परिवार आदि) और शिक्षण विधियाँ।
                          <div class="topic-split">
-                           • EVS Content: 15 Qs <br>
-                           • How to Teach EVS: 15 Qs
+                           • EVS विषय-वस्तु (Content): 15 प्रश्न <br>
+                           • EVS कैसे सिखाएं (Pedagogy): 15 प्रश्न
                         </div>
                     </td>
-                    <td data-label="No. of Questions" class="question-count">30</td>
+                    <td data-label="प्रश्नों की संख्या" class="question-count">30</td>
                 </tr>
                  <tr>
-                    <td data-label="Section"><strong>Total</strong></td>
-                    <td data-label="Topics / Breakdown"><strong>All sections combined</strong></td>
-                    <td data-label="No. of Questions" class="question-count"><strong>150</strong></td>
+                    <td data-label="खंड/विषय"><strong>कुल</strong></td>
+                    <td data-label="विषय / विवरण"><strong>सभी खंड मिलाकर</strong></td>
+                    <td data-label="प्रश्नों की संख्या" class="question-count"><strong>150</strong></td>
                 </tr>
             </tbody>
         </table>
 
-        <p class="note">Remember, for Languages, Math, and EVS, half the questions test your knowledge of the subject (Content), and the other half test how you'd teach it (Pedagogy).</p>
+        <p class="note">याद रखें, भाषा, गणित और EVS के लिए, आधे प्रश्न आपके विषय के ज्ञान (Content) का परीक्षण करते हैं, और दूसरे आधे यह परखते हैं कि आप इसे कैसे पढ़ाएंगे (Pedagogy)।</p>
 
         <hr style="margin: 2em 0; border: 0; border-top: 1px dashed #ccc;">
 
-        <h2>Detailed Syllabus Breakdown</h2>
+        <h2>विस्तृत सिलेबस विवरण</h2>
 
         <!-- Child Development and Pedagogy -->
-        <h3>Child Development and Pedagogy (CDP) - 30 Questions</h3>
-        <p>This is super important! It’s all about understanding how young kids (primary school level, ages 6-11) learn and grow.</p>
+        <h3>बाल विकास और शिक्षाशास्त्र (CDP) - <span class="question-count">30 प्रश्न</span></h3>
+        <p>यह बहुत महत्वपूर्ण है! यह सब छोटे बच्चों (प्राथमिक विद्यालय स्तर, 6-11 वर्ष) के सीखने और बड़े होने के तरीके को समझने के बारे में है।</p>
 
-        <h4>a) Child Development (Primary School Child) - <span class="question-count">15 Questions</span></h4>
+        <h4>क) बाल विकास (प्राथमिक विद्यालय का बच्चा) - <span class="question-count">15 प्रश्न</span></h4>
         <ul>
-            <li>What development means & how it connects to learning.</li>
-            <li>Basic rules of how children develop.</li>
-            <li>How family background (Heredity) & surroundings (Environment) affect kids.</li>
-            <li>How kids become social (talking to teachers, parents, friends).</li>
-            <li>Ideas from thinkers like Piaget, Kohlberg, and Vygotsky about how kids think.</li>
-            <li>Teaching that focuses on the child and encourages progress.</li>
-            <li>Thinking critically about 'intelligence' – what does it really mean?</li>
-            <li>Understanding that intelligence has many sides (Multi-Dimensional).</li>
-            <li>How language and thinking are linked.</li>
-            <li>Gender issues: seeing gender as a social idea, gender roles, bias, and how it affects school.</li>
-            <li>Why every student is different (based on language, caste, gender, community, religion, etc.) and how to understand these differences.</li>
-            <li>Difference between checking learning *while* it happens (Assessment for learning) vs. *after* it happens (Assessment of learning).</li>
-            <li>School-Based Assessment & Continuous Comprehensive Evaluation (CCE) – what they are and how to use them.</li>
-            <li>Asking the right questions to see if students are ready to learn, helping them think critically, and checking what they've achieved.</li>
+            <li>विकास की अवधारणा और सीखने के साथ इसका संबंध।</li>
+            <li>बच्चों के विकास के सिद्धांत।</li>
+            <li>आनुवंशिकता और पर्यावरण का प्रभाव।</li>
+            <li>समाजीकरण प्रक्रियाएं: सामाजिक दुनिया और बच्चे (शिक्षक, माता-पिता, साथी)।</li>
+            <li>पियाजे, कोहलबर्ग और वायगोत्स्की: निर्माण और महत्वपूर्ण दृष्टिकोण।</li>
+            <li>बाल-केंद्रित और प्रगतिशील शिक्षा की अवधारणाएं।</li>
+            <li>बुद्धि के निर्माण का महत्वपूर्ण दृष्टिकोण।</li>
+            <li>बहु-आयामी बुद्धि।</li>
+            <li>भाषा और विचार।</li>
+            <li>लिंग एक सामाजिक निर्माण के रूप में; लिंग भूमिकाएं, लिंग-पूर्वाग्रह और शैक्षिक अभ्यास।</li>
+            <li>शिक्षार्थियों के बीच व्यक्तिगत अंतर, भाषा, जाति, लिंग, समुदाय, धर्म आदि की विविधता के आधार पर अंतर को समझना।</li>
+            <li>सीखने के लिए मूल्यांकन (Assessment for learning) और सीखने का मूल्यांकन (assessment of learning) के बीच अंतर।</li>
+            <li>स्कूल-आधारित मूल्यांकन, सतत और व्यापक मूल्यांकन (CCE): दृष्टिकोण और अभ्यास।</li>
+            <li>शिक्षार्थियों की तैयारी के स्तर का आकलन करने के लिए उपयुक्त प्रश्न तैयार करना; कक्षा में सीखने और महत्वपूर्ण सोच को बढ़ाना और शिक्षार्थी की उपलब्धि का आकलन करना।</li>
         </ul>
 
-        <h4>b) Concept of Inclusive Education & Understanding Children with Special Needs - <span class="question-count">5 Questions</span></h4>
+        <h4>ख) समावेशी शिक्षा की अवधारणा और विशेष आवश्यकता वाले बच्चों को समझना - <span class="question-count">5 प्रश्न</span></h4>
         <ul>
-            <li>Teaching students from all backgrounds, including those facing disadvantages.</li>
-            <li>Helping children who have learning difficulties or impairments.</li>
-            <li>Working with gifted, creative, and specially-abled students.</li>
+            <li>वंचित और अलाभान्वित सहित विविध पृष्ठभूमि के शिक्षार्थियों को संबोधित करना।</li>
+            <li>सीखने की कठिनाइयों, 'क्षीणता' आदि वाले बच्चों की जरूरतों को संबोधित करना।</li>
+            <li>प्रतिभाशाली, रचनात्मक, विशेष रूप से सक्षम शिक्षार्थियों को संबोधित करना।</li>
         </ul>
 
-        <h4>c) Learning and Pedagogy (How Teaching Happens) - <span class="question-count">10 Questions</span></h4>
+        <h4>ग) सीखना और शिक्षाशास्त्र (शिक्षण कैसे होता है) - <span class="question-count">10 प्रश्न</span></h4>
         <ul>
-            <li>How children think and learn; why some kids struggle in school.</li>
-            <li>The basics of teaching and learning; how kids learn best (e.g., learning as a social thing).</li>
-            <li>Seeing children as problem solvers and little 'scientists'.</li>
-            <li>Different ideas about how learning happens; seeing children's 'mistakes' as important steps in learning.</li>
-            <li>How feelings (Emotions) and thinking (Cognition) are connected.</li>
-            <li>What motivates kids to learn.</li>
-            <li>Things that help learning – both personal (like interest) and environmental (like classroom atmosphere).</li>
+            <li>बच्चे कैसे सोचते और सीखते हैं; बच्चे स्कूल के प्रदर्शन में सफलता प्राप्त करने में 'असफल' क्यों और कैसे होते हैं।</li>
+            <li>शिक्षण और सीखने की बुनियादी प्रक्रियाएं; बच्चों की सीखने की रणनीतियाँ; एक सामाजिक गतिविधि के रूप में सीखना; सीखने का सामाजिक संदर्भ।</li>
+            <li>एक समस्या समाधानकर्ता और एक 'वैज्ञानिक अन्वेषक' के रूप में बच्चा।</li>
+            <li>बच्चों में सीखने की वैकल्पिक अवधारणाएँ, बच्चों की 'त्रुटियों' को सीखने की प्रक्रिया में महत्वपूर्ण कदमों के रूप में समझना।</li>
+            <li>संज्ञान और भावनाएँ।</li>
+            <li>अभिप्रेरणा और सीखना।</li>
+            <li>सीखने में योगदान देने वाले कारक - व्यक्तिगत और पर्यावरणीय।</li>
         </ul>
 
         <!-- Language 1 -->
-        <h3>Language 1 - 30 Questions</h3>
-        <p>This section checks your skills in the main language you'll use for teaching (e.g., Hindi or English, whichever you choose as Language 1).</p>
+        <h3>भाषा 1 - <span class="question-count">30 प्रश्न</span></h3>
+        <p>यह खंड आपकी उस मुख्य भाषा में आपके कौशल की जाँच करता है जिसका उपयोग आप शिक्षण के लिए करेंगे (जैसे, हिंदी या अंग्रेजी, जो भी आप भाषा 1 के रूप में चुनते हैं)।</p>
 
-        <h4>a) Language Comprehension - <span class="question-count">15 Questions</span></h4>
+        <h4>क) भाषा अवबोधन (Language Comprehension) - <span class="question-count">15 प्रश्न</span></h4>
         <ul>
-            <li>Reading two unseen passages:
+            <li>दो अनदेखे गद्यांश पढ़ना:
                 <ul>
-                    <li>One might be a story, drama, or article (literary, scientific, narrative, or discursive).</li>
-                    <li>One will likely be a poem.</li>
+                    <li>एक गद्य या नाटक या लेख हो सकता है (साहित्यिक, वैज्ञानिक, कथात्मक, या विवेचनात्मक)।</li>
+                    <li>एक संभवतः कविता होगी।</li>
                 </ul>
             </li>
-            <li>Answering questions based on the passages about understanding, guessing meaning (inference), grammar, and vocabulary.</li>
+            <li>समझ, अनुमान (inference), व्याकरण और शाब्दिक क्षमता पर आधारित प्रश्नों का उत्तर देना।</li>
         </ul>
 
-        <h4>b) Pedagogy of Language Development (How to Teach Language) - <span class="question-count">15 Questions</span></h4>
+        <h4>ख) भाषा विकास का शिक्षाशास्त्र (Pedagogy of Language Development) - <span class="question-count">15 प्रश्न</span></h4>
         <ul>
-            <li>How kids learn and acquire language naturally.</li>
-            <li>Principles of teaching a language.</li>
-            <li>The importance of listening and speaking; how children use language as a tool.</li>
-            <li>Thinking critically about grammar's role in learning to communicate (speaking and writing).</li>
-            <li>Challenges of teaching language in a classroom with diverse students; dealing with language difficulties, errors, and disorders.</li>
-            <li>Developing Language Skills (Listening, Speaking, Reading, Writing - LSRW).</li>
-            <li>Checking how well students understand and use the language (speaking, listening, reading, writing).</li>
-            <li>Using teaching materials: Textbooks, computers/videos (multi-media), using different languages present in the classroom as a resource.</li>
-            <li>Helping students who are struggling (Remedial Teaching).</li>
+            <li>अधिगम और अर्जन (Learning and acquisition)।</li>
+            <li>भाषा शिक्षण के सिद्धांत।</li>
+            <li>सुनने और बोलने की भूमिका; भाषा का कार्य और बच्चे इसे एक उपकरण के रूप में कैसे उपयोग करते हैं।</li>
+            <li>मौखिक और लिखित रूप में विचारों को संप्रेषित करने के लिए भाषा सीखने में व्याकरण की भूमिका पर एक महत्वपूर्ण दृष्टिकोण।</li>
+            <li>एक विविध कक्षा में भाषा सिखाने की चुनौतियाँ; भाषा की कठिनाइयाँ, त्रुटियाँ और विकार।</li>
+            <li>भाषा कौशल (सुनना, बोलना, पढ़ना, लिखना - LSRW)।</li>
+            <li>भाषा की समझ और प्रवीणता का मूल्यांकन: बोलना, सुनना, पढ़ना और लिखना।</li>
+            <li>शिक्षण-अधिगम सामग्री: पाठ्यपुस्तक, मल्टी-मीडिया सामग्री, कक्षा के बहुभाषी संसाधन।</li>
+            <li>उपचारात्मक शिक्षण (Remedial Teaching)।</li>
         </ul>
 
         <!-- Language 2 -->
-        <h3>Language 2 - 30 Questions</h3>
-        <p>Similar to Language 1, but focuses on a different language you choose. It tests your basic understanding and communication ability in that second language.</p>
+        <h3>भाषा 2 - <span class="question-count">30 प्रश्न</span></h3>
+        <p>भाषा 1 के समान, लेकिन आपके द्वारा चुनी गई एक अलग भाषा पर केंद्रित है। यह उस दूसरी भाषा में आपकी बुनियादी समझ और संचार क्षमता का परीक्षण करता है।</p>
 
-        <h4>a) Comprehension - <span class="question-count">15 Questions</span></h4>
+        <h4>क) अवबोधन (Comprehension) - <span class="question-count">15 प्रश्न</span></h4>
         <ul>
-            <li>Reading two unseen *prose* passages (these could be argumentative, literary, story-like, or scientific).</li>
-            <li>Answering questions about understanding, grammar, and vocabulary based on the passages.</li>
+            <li>दो अनदेखे *गद्य* अनुच्छेद (ये विवेचनात्मक या साहित्यिक, कथात्मक या वैज्ञानिक हो सकते हैं) पढ़ना।</li>
+            <li>अनुच्छेदों के आधार पर समझ, व्याकरण और शाब्दिक क्षमता पर आधारित प्रश्नों का उत्तर देना।</li>
         </ul>
 
-        <h4>b) Pedagogy of Language Development (How to Teach Language) - <span class="question-count">15 Questions</span></h4>
+        <h4>ख) भाषा विकास का शिक्षाशास्त्र (Pedagogy of Language Development) - <span class="question-count">15 प्रश्न</span></h4>
         <ul>
-            <li>How kids learn and acquire language naturally.</li>
-            <li>Principles of teaching a language.</li>
-            <li>The importance of listening and speaking; how children use language as a tool.</li>
-            <li>Thinking critically about grammar's role in learning to communicate.</li>
-            <li>Challenges of teaching language in diverse classrooms; dealing with difficulties, errors, disorders.</li>
-            <li>Developing Language Skills (LSRW).</li>
-            <li>Checking language understanding and skills.</li>
-            <li>Using teaching materials: Textbooks, multi-media, multilingual resources.</li>
-            <li>Helping students who need extra support (Remedial Teaching).</li>
+            <li>अधिगम और अर्जन।</li>
+            <li>भाषा शिक्षण के सिद्धांत।</li>
+            <li>सुनने और बोलने की भूमिका; भाषा का कार्य और बच्चे इसे एक उपकरण के रूप में कैसे उपयोग करते हैं।</li>
+            <li>संचार के लिए भाषा सीखने में व्याकरण की भूमिका पर एक महत्वपूर्ण दृष्टिकोण।</li>
+            <li>विविध कक्षाओं में भाषा सिखाने की चुनौतियाँ; कठिनाइयाँ, त्रुटियाँ, विकार।</li>
+            <li>भाषा कौशल (LSRW)।</li>
+            <li>भाषा की समझ और कौशल का मूल्यांकन।</li>
+            <li>शिक्षण-अधिगम सामग्री: पाठ्यपुस्तक, मल्टी-मीडिया, बहुभाषी संसाधन।</li>
+            <li>अतिरिक्त सहायता की आवश्यकता वाले छात्रों की मदद करना (उपचारात्मक शिक्षण)।</li>
         </ul>
         
          <!-- Mathematics -->
-        <h3>Mathematics - 30 Questions</h3>
-        <p>Don't worry, the math questions are usually based on topics from Classes 1-5. Half the questions are on math concepts, and half are on how to teach math effectively.</p>
+        <h3>गणित - <span class="question-count">30 प्रश्न</span></h3>
+        <p>चिंता न करें, गणित के प्रश्न आमतौर पर कक्षा 1-5 के विषयों पर आधारित होते हैं। आधे प्रश्न गणितीय अवधारणाओं पर होते हैं, और आधे गणित को प्रभावी ढंग से कैसे पढ़ाया जाए, इस पर होते हैं।</p>
 
-        <h4>a) Content - <span class="question-count">15 Questions</span></h4>
+        <h4>क) विषय-वस्तु (Content) - <span class="question-count">15 प्रश्न</span></h4>
         <ul>
-            <li>Geometry (Basic shapes)</li>
-            <li>Shapes & Understanding Space (like near/far, inside/outside)</li>
-            <li>Solid shapes around us (like cubes, spheres)</li>
-            <li>Numbers (counting, place value)</li>
-            <li>Addition and Subtraction</li>
-            <li>Multiplication</li>
-            <li>Division</li>
-            <li>Measurement (length, weight, capacity)</li>
-            <li>Weight</li>
-            <li>Time (reading clocks, calendar)</li>
-            <li>Volume</li>
-            <li>Data Handling (reading simple charts/graphs)</li>
-            <li>Patterns (number and shape patterns)</li>
-            <li>Money (adding, subtracting money)</li>
+            <li>ज्यामिति (मूल आकृतियाँ)</li>
+            <li>आकृतियाँ और स्थानिक समझ (जैसे पास/दूर, अंदर/बाहर)</li>
+            <li>हमारे आसपास के ठोस पदार्थ (जैसे घन, गोला)</li>
+            <li>संख्याएँ (गिनती, स्थानीय मान)</li>
+            <li>जोड़ और घटाव</li>
+            <li>गुणा</li>
+            <li>भाग</li>
+            <li>माप (लंबाई, वजन, क्षमता)</li>
+            <li>वजन</li>
+            <li>समय (घड़ी पढ़ना, कैलेंडर)</li>
+            <li>आयतन</li>
+            <li>आंकड़ा प्रबंधन (सरल चार्ट/ग्राफ पढ़ना)</li>
+            <li>पैटर्न (संख्या और आकार पैटर्न)</li>
+            <li>मुद्रा (पैसे जोड़ना, घटाना)</li>
         </ul>
 
-        <h4>b) Pedagogical issues (How to Teach Math) - <span class="question-count">15 Questions</span></h4>
+        <h4>ख) शिक्षाशास्त्रीय मुद्दे (Pedagogical issues) - <span class="question-count">15 प्रश्न</span></h4>
         <ul>
-            <li>The nature of Math (is it logical?); understanding how kids think about math.</li>
-            <li>Why Math is important in the school curriculum.</li>
-            <li>The language used in Math classrooms.</li>
-            <li>Connecting Math to the community and real life.</li>
-            <li>Checking student understanding (formal tests and informal observation).</li>
-            <li>Common problems faced while teaching Math.</li>
-            <li>Looking at student errors to understand their thinking (Error analysis).</li>
-            <li>Finding out specific problems students have (Diagnostic) and helping them fix it (Remedial Teaching).</li>
+            <li>गणित की प्रकृति/तार्किक सोच; बच्चों की सोच और तर्क पैटर्न और अर्थ बनाने और सीखने की रणनीतियों को समझना।</li>
+            <li>पाठ्यक्रम में गणित का स्थान।</li>
+            <li>गणित की भाषा।</li>
+            <li>सामुदायिक गणित।</li>
+            <li>औपचारिक और अनौपचारिक तरीकों से मूल्यांकन।</li>
+            <li>शिक्षण की समस्याएं।</li>
+            <li>त्रुटि विश्लेषण और सीखने और सिखाने के संबंधित पहलू।</li>
+            <li>नैदानिक ​​और उपचारात्मक शिक्षण (Diagnostic and Remedial Teaching)।</li>
         </ul>
         
          <!-- Environmental Studies (EVS) -->
-        <h3>Environmental Studies (EVS) - 30 Questions</h3>
-        <p>This section combines basic science and social studies concepts relevant to young children's lives. It's often a good scoring section!</p>
+        <h3>पर्यावरण अध्ययन (EVS) - <span class="question-count">30 प्रश्न</span></h3>
+        <p>यह खंड छोटे बच्चों के जीवन से संबंधित बुनियादी विज्ञान और सामाजिक अध्ययन की अवधारणाओं को जोड़ता है। यह अक्सर अच्छा स्कोरिंग सेक्शन होता है!</p>
 
-        <h4>a) Content - <span class="question-count">15 Questions</span></h4>
+        <h4>क) विषय-वस्तु (Content) - <span class="question-count">15 प्रश्न</span></h4>
         <ul>
-            <li>Family and Friends (Relationships, Work and Play, Animals, Plants)</li>
-            <li>Food (Where it comes from, cooking, eating habits)</li>
-            <li>Shelter (Types of houses, why we need them)</li>
-            <li>Water (Sources, importance, conservation)</li>
-            <li>Travel (Means of transport, places)</li>
-            <li>Things We Make and Do (Crafts, occupations)</li>
+            <li>परिवार और मित्र (रिश्ते, काम और खेल, पशु, पौधे)</li>
+            <li>भोजन (यह कहाँ से आता है, खाना बनाना, खाने की आदतें)</li>
+            <li>आश्रय (घरों के प्रकार, हमें उनकी आवश्यकता क्यों है)</li>
+            <li>पानी (स्रोत, महत्व, संरक्षण)</li>
+            <li>यात्रा (परिवहन के साधन, स्थान)</li>
+            <li>चीजें जो हम बनाते और करते हैं (शिल्प, व्यवसाय)</li>
         </ul>
 
-        <h4>b) Pedagogical Issues (How to Teach EVS) - <span class="question-count">15 Questions</span></h4>
+        <h4>ख) शिक्षाशास्त्रीय मुद्दे (Pedagogical Issues) - <span class="question-count">15 प्रश्न</span></h4>
         <ul>
-            <li>What EVS is all about (Concept and scope).</li>
-            <li>Why EVS is important; teaching it as an integrated subject (combining science/social science).</li>
-            <li>Environmental Studies & Environmental Education - how they relate.</li>
-            <li>How children learn EVS best (Learning Principles).</li>
-            <li>Connecting EVS to Science & Social Science.</li>
-            <li>Different ways to introduce concepts (Approaches).</li>
-            <li>Using Activities to teach.</li>
-            <li>Importance of Experiments/Practical Work.</li>
-            <li>Using Discussions in class.</li>
-            <li>Continuous Comprehensive Evaluation (CCE) in EVS.</li>
-            <li>Teaching materials and aids for EVS.</li>
-            <li>Common problems faced while teaching EVS.</li>
+            <li>EVS की अवधारणा और कार्यक्षेत्र।</li>
+            <li>EVS का महत्व; इसे एक एकीकृत विषय के रूप में पढ़ाना (विज्ञान/सामाजिक विज्ञान का संयोजन)।</li>
+            <li>पर्यावरण अध्ययन और पर्यावरण शिक्षा - वे कैसे संबंधित हैं।</li>
+            <li>सीखने के सिद्धांत (बच्चे EVS कैसे सीखते हैं)।</li>
+            <li>विज्ञान और सामाजिक विज्ञान से संबंध और कार्यक्षेत्र।</li>
+            <li>अवधारणाओं को प्रस्तुत करने के दृष्टिकोण।</li>
+            <li>गतिविधियाँ।</li>
+            <li>प्रयोग/व्यावहारिक कार्य।</li>
+            <li>चर्चा।</li>
+            <li>सतत एवं व्यापक मूल्यांकन (CCE)।</li>
+            <li>शिक्षण सामग्री/सहायता।</li>
+            <li>समस्याएं (EVS शिक्षण में)।</li>
         </ul>
 
         <hr style="margin: 2em 0; border: 0; border-top: 1px dashed #ccc;">
 
-        <p class="note"><strong>Quick Tip:</strong> You can usually find a downloadable PDF version of the official syllabus online. Having that handy is great for detailed reference!</p>
+        <p class="note"><strong>त्वरित सुझाव:</strong> आप आमतौर पर आधिकारिक सिलेबस का डाउनलोड करने योग्य PDF संस्करण ऑनलाइन पा सकते हैं। विस्तृत संदर्भ के लिए इसे संभाल कर रखना बहुत अच्छा है!</p>
 
-        <p>Hope this breakdown helps you organize your studies. Good luck with your preparation!</p>
+        <p>आशा है कि यह विवरण आपकी पढ़ाई को व्यवस्थित करने में मदद करेगा। आपकी तैयारी के लिए शुभकामनाएं!</p>
 
     </div>
 </body>
