@@ -3,127 +3,561 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CTET सिलेबस 2025</title>
+    <title>सीटेट पेपर 2 सिलेबस गाइड (हिन्दी)</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
+            font-family: 'Noto Sans Devanagari', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Added Devanagari font */
+            line-height: 1.7; /* Slightly increased for Hindi readability */
+            color: #333;
             background-color: #f9f9f9;
+            margin: 0;
+            padding: 20px;
         }
-        header {
-            background-color: #4CAF50;
-            color: white;
+
+        .container {
+            max-width: 900px;
+            margin: 20px auto;
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        h1, h2, h3 {
+            color: #0056b3; /* Primary Blue */
+            margin-bottom: 0.8em;
+        }
+
+        h1 {
             text-align: center;
-            padding: 1rem 0;
+            font-size: 2.2em;
+            border-bottom: 2px solid #007bff; /* Lighter Blue */
+            padding-bottom: 10px;
+            margin-bottom: 1em;
         }
-        main {
-            padding: 2rem;
-        }
-        section {
-            background: white;
-            margin: 1rem 0;
-            padding: 1rem;
-            border-radius: 8px;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-        }
+
         h2 {
-            color: #4CAF50;
+            font-size: 1.8em;
+            color: #007bff; /* Lighter Blue */
+            border-left: 5px solid #0056b3;
+            padding-left: 10px;
+            margin-top: 2em;
         }
-        ul {
-            padding-left: 1.5rem;
+
+        h3 {
+            font-size: 1.4em;
+            color: #17a2b8; /* Info Teal */
+            margin-top: 1.5em;
         }
+                
+        h4 {
+            font-size: 1.1em;
+            color: #333;
+            font-weight: bold;
+            margin-top: 1.5em;
+            margin-bottom: 0.5em;
+        }
+        
+        h4 .question-count-inline {
+            font-weight: bold;
+            color: #dc3545; /* Red for emphasis */
+            font-size: 0.95em;
+            margin-left: 5px;
+            font-family: monospace; /* Helps align numbers */
+        }
+
+
+        p {
+            margin-bottom: 1em;
+            color: #555;
+        }
+
         table {
             width: 100%;
             border-collapse: collapse;
-            margin-top: 1rem;
+            margin-top: 20px;
+            margin-bottom: 30px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
         }
-        table, th, td {
-            border: 1px solid #ddd;
-        }
+
         th, td {
-            padding: 0.5rem;
+            border: 1px solid #e0e0e0;
+            padding: 12px 15px;
             text-align: left;
+            vertical-align: top; /* Align content to top */
         }
+
         th {
-            background-color: #4CAF50;
-            color: white;
+            background-color: #007bff; /* Lighter Blue */
+            color: #ffffff;
+            font-weight: bold;
+            font-size: 1.1em;
         }
-        footer {
-            text-align: center;
-            padding: 1rem;
-            background-color: #4CAF50;
-            color: white;
-            margin-top: 2rem;
+
+        tr:nth-child(even) {
+            background-color: #f2f8ff; /* Very Light Blue */
         }
+
+        tr:hover {
+            background-color: #e6f2ff; /* Slightly Darker Hover */
+        }
+
+        ul {
+            list-style: none; /* Remove default bullets */
+            padding-left: 0;
+            margin-top: 0.5em;
+        }
+
+        ul li {
+            padding-left: 25px;
+            position: relative;
+            margin-bottom: 8px;
+            color: #444;
+        }
+
+        ul li::before {
+            content: '»'; /* Use a different symbol like double arrow */
+            position: absolute;
+            left: 0;
+            color: #17a2b8; /* Info Teal */
+            font-weight: bold;
+            font-size: 1.2em; /* Slightly larger */
+            top: 1px; /* Adjust vertical position for Hindi */
+        }
+        
+        /* Nested list styling */
+        ul ul {
+            margin-top: 5px;
+            padding-left: 15px; /* Indent nested lists */
+        }
+        
+        ul ul li::before {
+            content: '•'; /* Smaller bullet for nested items */
+            color: #007bff; /* Lighter Blue */
+            font-size: 1.3em; /* Make bullet slightly larger */
+            top: -1px; /* Adjust vertical position */
+        }
+
+        .note {
+            background-color: #fff3cd; /* Light Yellow */
+            border-left: 5px solid #ffc107; /* Warning Yellow */
+            padding: 15px 20px;
+            margin-top: 20px;
+            margin-bottom: 20px;
+            border-radius: 5px;
+            font-size: 0.95em;
+            color: #856404; /* Dark Yellow Text */
+        }
+        
+        .note strong {
+           color: #664d03; 
+        }
+
+        .question-count {
+            font-weight: bold;
+            color: #dc3545; /* Red for emphasis */
+            text-align: center; /* Center align question counts */
+            font-family: monospace; /* Ensure numbers align well */
+        }
+        
+        .marks-count {
+             font-weight: normal;
+             color: #6c757d; /* Gray for marks */
+             text-align: center;
+             font-size: 0.9em;
+             font-family: monospace;
+        }
+        
+        .topic-split {
+            font-size: 0.9em;
+            color: #666;
+            margin-top: 5px;
+            padding-left: 10px;
+        }
+        
+        .subject-option {
+            background-color: #e2e3e5;
+            padding: 8px 15px;
+            border-radius: 4px;
+            margin-top: 10px;
+            display: inline-block;
+            font-weight: bold;
+            color: #343a40;
+        }
+
+        /* Making the table responsive */
+        @media (max-width: 768px) {
+            th, td {
+                font-size: 0.9em;
+                padding: 8px 10px;
+            }
+            h1 { font-size: 1.8em; }
+            h2 { font-size: 1.5em; }
+            h3 { font-size: 1.2em; }
+            .container { padding: 20px; }
+        }
+
+        @media (max-width: 600px) { /* Adjust breakpoint if needed */
+             /* Force table elements to not stack */
+            table, thead, tbody, th, td, tr {
+                display: block;
+            }
+             /* Hide table headers (but not display: none;, for accessibility) */
+            thead tr {
+                position: absolute;
+                top: -9999px;
+                left: -9999px;
+            }
+            tr { border: 1px solid #ccc; margin-bottom: 10px; }
+            td {
+                /* Behave like a "row" */
+                border: none;
+                border-bottom: 1px solid #eee;
+                position: relative;
+                padding-left: 45%; /* Space for label */
+                 white-space: normal; /* Allow text wrap */
+                 text-align: right; /* Align value to the right */
+                 min-height: 30px; /* Ensure space for label */
+                 padding-top: 8px;
+                 padding-bottom: 8px;
+            }
+            td::before {
+                /* Now like a table header label */
+                position: absolute;
+                left: 10px; /* Position label */
+                width: 40%; /* Label width */
+                padding-right: 10px;
+                white-space: nowrap; /* Prevent label wrap */
+                text-align: left; /* Align label text */
+                font-weight: bold;
+                content: attr(data-label); /* Use data-label attribute */
+                 color: #0056b3; /* Label color */
+                 font-size: 0.9em;
+            }
+             /* Style the first "cell" like a heading */
+             td[data-label="विषय"] { 
+                 font-size: 1.05em; 
+                 background-color: #f2f8ff; 
+                 font-weight: bold; 
+                 text-align: left; 
+                 padding-left: 10px;
+             } 
+             /* Align other cells */
+             td[data-label="महत्वपूर्ण विषय"], td[data-label="प्रश्न"], td[data-label="अंक"] { 
+                 text-align: left; 
+                 padding-left: 10px;
+             } 
+             /* Hide labels for these */
+             td[data-label="महत्वपूर्ण विषय"]::before, td[data-label="प्रश्न"]::before, td[data-label="अंक"]::before { 
+                 display: none; 
+             } 
+             .question-count, .marks-count { text-align: left; } /* Align counts left on mobile */
+        }
+
     </style>
 </head>
 <body>
-    <header>
-        <h1>सीटेट सिलेबस 2025</h1>
-        <p>कक्षा 6 से 8 के लिए</p>
-    </header>
-    <main>
-        <section>
-            <h2>परीक्षा विवरण</h2>
-            <ul>
-                <li>कुल अंक: 150</li>
-                <li>प्रश्नों की संख्या: 150</li>
-                <li>प्रत्येक सही उत्तर के लिए 1 अंक</li>
-                <li>कोई नकारात्मक अंकन नहीं</li>
-                <li>परीक्षा अवधि: 2.5 घंटे</li>
-            </ul>
-        </section>
-        <section>
-            <h2>विषयवार अंक वितरण</h2>
-            <table>
-                <thead>
-                    <tr>
-                        <th>विषय</th>
-                        <th>प्रश्नों की संख्या</th>
-                        <th>अंक</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>बाल विकास और शिक्षाशास्त्र</td>
-                        <td>30</td>
-                        <td>30</td>
-                    </tr>
-                    <tr>
-                        <td>भाषा I (हिंदी)</td>
-                        <td>30</td>
-                        <td>30</td>
-                    </tr>
-                    <tr>
-                        <td>भाषा II (अंग्रेजी/अन्य)</td>
-                        <td>30</td>
-                        <td>30</td>
-                    </tr>
-                    <tr>
-                        <td>गणित और विज्ञान (विज्ञान वर्ग के लिए)</td>
-                        <td>60</td>
-                        <td>60</td>
-                    </tr>
-                    <tr>
-                        <td>सामाजिक अध्ययन (सामाजिक विज्ञान वर्ग के लिए)</td>
-                        <td>60</td>
-                        <td>60</td>
-                    </tr>
-                </tbody>
-            </table>
-        </section>
-        <section>
-            <h2>विस्तृत सिलेबस</h2>
-            <ul>
-                <li><strong>बाल विकास और शिक्षाशास्त्र:</strong> अधिगम और शिक्षण पद्धतियाँ, विकास के सिद्धांत</li>
-                <li><strong>भाषा I:</strong> व्याकरण, पठन कौशल</li>
-                <li><strong>भाषा II:</strong> भाषा समझ, शिक्षण पद्धतियाँ</li>
-                <li><strong>गणित:</strong> संख्या प्रणाली, ज्यामिति, बीजगणित, अनुपात</li>
-                <li><strong>विज्ञान:</strong> पदार्थ, ऊर्जा, पर्यावरण</li>
-                <li><strong>सामाजिक अध्ययन:</strong> इतिहास, भूगोल, नागरिकशास्त्र</li>
-            </ul>
-        </section>
-    </main>
+    <div class="container">
+
+        <h1>सीटेट पेपर 2 सिलेबस गाइड (कक्षा 6-8 शिक्षकों के लिए)</h1>
+
+        <p>नमस्ते, भविष्य के शिक्षकों! यदि आपका सपना कक्षा 6 से 8 (उच्च प्राथमिक स्तर) के छात्रों को पढ़ाना है, तो सीटेट पेपर 2 आपके लिए परीक्षा है। सिलेबस को समझना इसे पास करने की दिशा में पहला बड़ा कदम है। आइए सरल तरीके से जानें कि आपको क्या अध्ययन करने की आवश्यकता है।</p>
+
+        <p>यह पेपर इस स्तर पर पढ़ाए जाने वाले विषयों के आपके ज्ञान और, महत्वपूर्ण रूप से, आप उन्हें कैसे पढ़ाएंगे, इसका परीक्षण करता है। अच्छी तैयारी महत्वपूर्ण है!</p>
+
+        <h2>परीक्षा खंडों का अवलोकन (सीटेट पेपर 2)</h2>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>विषय</th>
+                    <th>महत्वपूर्ण विषय / विवरण</th>
+                    <th>प्रश्न</th>
+                    <th>अंक</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td data-label="विषय">बाल विकास और शिक्षाशास्त्र (CDP)</td>
+                    <td data-label="महत्वपूर्ण विषय">
+                        यह समझना कि बड़े बच्चे (प्राथमिक विद्यालय आयु) कैसे विकसित होते हैं, सीखते हैं, और विशेष जरूरतों को संभालना। इसमें सीखने के सिद्धांत शामिल हैं।
+                        <div class="topic-split">
+                           • बाल विकास: 15 प्रश्न <br>
+                           • समावेशी शिक्षा: 5 प्रश्न <br>
+                           • सीखना और शिक्षाशास्त्र: 10 प्रश्न
+                        </div>
+                    </td>
+                    <td data-label="प्रश्न" class="question-count">30</td>
+                    <td data-label="अंक" class="marks-count">30</td>
+                </tr>
+                <tr>
+                    <td data-label="विषय">भाषा I</td>
+                    <td data-label="महत्वपूर्ण विषय">
+                        आपकी मुख्य शिक्षण भाषा कौशल (अवबोधन और भाषा कैसे सिखाएं)।
+                        <div class="topic-split">
+                           • भाषा अवबोधन (गद्य/नाटक और कविता): 15 प्रश्न <br>
+                           • भाषा विकास का शिक्षाशास्त्र: 15 प्रश्न
+                        </div>
+                    </td>
+                    <td data-label="प्रश्न" class="question-count">30</td>
+                    <td data-label="अंक" class="marks-count">30</td>
+                </tr>
+                <tr>
+                    <td data-label="विषय">भाषा II</td>
+                    <td data-label="महत्वपूर्ण विषय">
+                        दूसरी भाषा में कौशल (अवबोधन और भाषा कैसे सिखाएं)।
+                        <div class="topic-split">
+                           • भाषा अवबोधन (दो गद्य अनुच्छेद): 15 प्रश्न <br>
+                           • भाषा विकास का शिक्षाशास्त्र: 15 प्रश्न
+                        </div>
+                    </td>
+                    <td data-label="प्रश्न" class="question-count">30</td>
+                    <td data-label="अंक" class="marks-count">30</td>
+                </tr>
+                <tr>
+                    <td data-label="विषय">
+                        <div class="subject-option">विकल्प क:</div> गणित और विज्ञान<br>(गणित/विज्ञान शिक्षकों के लिए)
+                    </td>
+                    <td data-label="महत्वपूर्ण विषय">
+                         गणित और विज्ञान की अवधारणाएँ (कक्षा 8 स्तर तक, कठिनाई अधिक) और उन्हें कैसे सिखाया जाए।
+                        <div class="topic-split">
+                           <b>गणित (30 प्रश्न):</b><br>
+                             • विषय-वस्तु (संख्या प्रणाली, बीजगणित, ज्यामिति, आदि): 20 प्रश्न <br>
+                             • शिक्षाशास्त्रीय मुद्दे: 10 प्रश्न <br>
+                           <b>विज्ञान (30 प्रश्न):</b><br>
+                             • विषय-वस्तु (भोजन, पदार्थ, सजीव जगत, आदि): 20 प्रश्न <br>
+                             • शिक्षाशास्त्रीय मुद्दे: 10 प्रश्न
+                        </div>
+                    </td>
+                     <td data-label="प्रश्न" class="question-count">60 <br>(30+30)</td>
+                     <td data-label="अंक" class="marks-count">60 <br>(30+30)</td>
+                </tr>
+                 <tr>
+                    <td data-label="विषय">
+                         <div class="subject-option">विकल्प ख:</div> सामाजिक अध्ययन / सामाजिक विज्ञान<br>(सामाजिक अध्ययन शिक्षकों के लिए)
+                    </td>
+                    <td data-label="महत्वपूर्ण विषय">
+                        इतिहास, भूगोल, सामाजिक और राजनीतिक जीवन की अवधारणाएँ (कक्षा 8 स्तर तक, कठिनाई अधिक) और उन्हें कैसे सिखाया जाए।
+                         <div class="topic-split">
+                           • विषय-वस्तु (इतिहास, भूगोल, नागरिक शास्त्र): 40 प्रश्न <br>
+                           • शिक्षाशास्त्रीय मुद्दे: 20 प्रश्न
+                        </div>
+                    </td>
+                    <td data-label="प्रश्न" class="question-count">60</td>
+                    <td data-label="अंक" class="marks-count">60</td>
+                </tr>
+                 <tr>
+                    <td data-label="विषय"><strong>कुल</strong></td>
+                    <td data-label="महत्वपूर्ण विषय"><strong>CDP + भाषा I + भाषा II + (गणित और विज्ञान या सामाजिक अध्ययन)</strong></td>
+                    <td data-label="प्रश्न" class="question-count"><strong>150</strong></td>
+                    <td data-label="अंक" class="marks-count"><strong>150</strong></td>
+                </tr>
+            </tbody>
+        </table>
+
+        <p class="note"><strong>महत्वपूर्ण विकल्प:</strong> आपको अपने चौथे खंड के रूप में या तो <strong>गणित और विज्ञान</strong> या <strong>सामाजिक अध्ययन / सामाजिक विज्ञान</strong> चुनना होगा, यह इस बात पर निर्भर करता है कि आप कौन सा विषय पढ़ाने की योजना बना रहे हैं।</p>
+
+        <hr style="margin: 2em 0; border: 0; border-top: 1px dashed #ccc;">
+
+        <h2>विस्तृत सिलेबस विवरण</h2>
+
+        <!-- I. Child Development and Pedagogy -->
+        <h3>I. बाल विकास और शिक्षाशास्त्र (CDP) - <span class="question-count-inline">(30 प्रश्न)</span></h3>
+        <p>यह खंड 11-14 वर्ष की आयु के छात्रों को समझने पर केंद्रित है। यह काफी वैचारिक है, इसलिए विचारों को समझना महत्वपूर्ण है।</p>
+
+        <h4>क) बाल विकास (प्रारंभिक विद्यालय का बच्चा) <span class="question-count-inline">(15 प्रश्न)</span></h4>
+        <ul>
+            <li>विकास की अवधारणा और सीखने के साथ इसका संबंध।</li>
+            <li>बच्चों के विकास के सिद्धांत।</li>
+            <li>आनुवंशिकता और पर्यावरण का प्रभाव।</li>
+            <li>समाजीकरण प्रक्रियाएं: सामाजिक दुनिया और बच्चे (शिक्षक, माता-पिता, साथी)।</li>
+            <li>पियाजे, कोहलबर्ग और वायगोत्स्की: निर्माण और महत्वपूर्ण दृष्टिकोण।</li>
+            <li>बाल-केंद्रित और प्रगतिशील शिक्षा की अवधारणाएं।</li>
+            <li>बुद्धि के निर्माण का महत्वपूर्ण दृष्टिकोण।</li>
+            <li>बहु-आयामी बुद्धि।</li>
+            <li>भाषा और विचार।</li>
+            <li>लिंग एक सामाजिक निर्माण के रूप में; लिंग भूमिकाएं, लिंग-पूर्वाग्रह और शैक्षिक अभ्यास।</li>
+            <li>शिक्षार्थियों के बीच व्यक्तिगत अंतर (भाषा, जाति, लिंग, समुदाय, धर्म आदि के आधार पर)।</li>
+            <li>सीखने के लिए मूल्यांकन और सीखने का मूल्यांकन के बीच अंतर; स्कूल-आधारित मूल्यांकन, सतत और व्यापक मूल्यांकन (CCE)।</li>
+            <li>तत्परता के स्तर का आकलन करने, सीखने और महत्वपूर्ण सोच को बढ़ाने और शिक्षार्थी की उपलब्धि का आकलन करने के लिए प्रश्न तैयार करना।</li>
+        </ul>
+
+        <h4>ख) समावेशी शिक्षा की अवधारणा और विशेष आवश्यकता वाले बच्चों को समझना <span class="question-count-inline">(5 प्रश्न)</span></h4>
+        <ul>
+            <li>वंचित/अलाभान्वित सहित विविध पृष्ठभूमि के शिक्षार्थियों को संबोधित करना।</li>
+            <li>सीखने की कठिनाइयों, दुर्बलताओं आदि वाले बच्चों की जरूरतों को संबोधित करना।</li>
+            <li>प्रतिभाशाली, रचनात्मक, विशेष रूप से सक्षम शिक्षार्थियों को संबोधित करना।</li>
+        </ul>
+
+        <h4>ग) सीखना और शिक्षाशास्त्र <span class="question-count-inline">(10 प्रश्न)</span></h4>
+        <ul>
+            <li>बच्चे कैसे सोचते और सीखते हैं; बच्चे स्कूल में 'असफल' क्यों हो सकते हैं।</li>
+            <li>शिक्षण और सीखने की बुनियादी प्रक्रियाएं; बच्चों की सीखने की रणनीतियाँ; एक सामाजिक गतिविधि के रूप में सीखना।</li>
+            <li>बच्चा एक समस्या समाधानकर्ता और 'वैज्ञानिक अन्वेषक' के रूप में।</li>
+            <li>सीखने की वैकल्पिक अवधारणाएँ; बच्चों की 'त्रुटियों' को सीखने के चरणों के रूप में समझना।</li>
+            <li>संज्ञान और भावनाएँ।</li>
+            <li>अभिप्रेरणा और सीखना।</li>
+            <li>सीखने में योगदान देने वाले कारक - व्यक्तिगत और पर्यावरणीय।</li>
+        </ul>
+
+        <!-- II. Language I -->
+        <h3>II. भाषा I - <span class="question-count-inline">(30 प्रश्न)</span></h3>
+        <p>आप जिस मुख्य भाषा में पढ़ाएंगे, उसमें आपकी दक्षता का परीक्षण करता है। यहां अच्छी पकड़ जरूरी है।</p>
+
+        <h4>क) भाषा अवबोधन <span class="question-count-inline">(15 प्रश्न)</span></h4>
+        <ul>
+            <li>दो अनदेखे गद्यांश पढ़ना:
+                <ul>
+                    <li>एक गद्य या नाटक।</li>
+                    <li>एक कविता।</li>
+                </ul>
+            </li>
+             <li>इन गद्यांशों पर आधारित अवबोधन, अनुमान, व्याकरण और शाब्दिक क्षमता पर प्रश्न।</li>
+        </ul>
+
+        <h4>ख) भाषा विकास का शिक्षाशास्त्र <span class="question-count-inline">(15 प्रश्न)</span></h4>
+        <ul>
+            <li>अधिगम और अर्जन।</li>
+            <li>भाषा शिक्षण के सिद्धांत।</li>
+            <li>सुनने और बोलने की भूमिका; भाषा का कार्य।</li>
+            <li>संचार में व्याकरण की भूमिका पर महत्वपूर्ण दृष्टिकोण।</li>
+            <li>विविध कक्षाओं में भाषा सिखाने की चुनौतियाँ (कठिनाइयाँ, त्रुटियाँ, विकार)।</li>
+            <li>भाषा कौशल (LSRW)।</li>
+            <li>भाषा की समझ और प्रवीणता का मूल्यांकन।</li>
+            <li>शिक्षण-अधिगम सामग्री (पाठ्यपुस्तक, मल्टी-मीडिया, बहुभाषी संसाधन)।</li>
+            <li>उपचारात्मक शिक्षण।</li>
+            <li>एक उपकरण के रूप में आईटी (भाषा शिक्षण में प्रौद्योगिकी का उपयोग - *नया विषय फोकस*)।</li>
+        </ul>
+
+        <!-- III. Language II -->
+        <h3>III. भाषा II - <span class="question-count-inline">(30 प्रश्न)</span></h3>
+        <p>दूसरी भाषा में आपके कौशल पर ध्यान केंद्रित करता है, जिसमें व्याकरण, शब्दावली और अवबोधन शामिल है।</p>
+
+        <h4>क) अवबोधन <span class="question-count-inline">(15 प्रश्न)</span></h4>
+        <ul>
+            <li>दो अनदेखे *गद्य* अनुच्छेद पढ़ना (विवेचनात्मक, साहित्यिक, कथात्मक, या वैज्ञानिक)।</li>
+            <li>इन अनुच्छेदों पर आधारित अवबोधन, व्याकरण और शाब्दिक क्षमता पर प्रश्न।</li>
+        </ul>
+
+        <h4>ख) भाषा विकास का शिक्षाशास्त्र <span class="question-count-inline">(15 प्रश्न)</span></h4>
+         <ul>
+            <li>अधिगम और अर्जन।</li>
+            <li>भाषा शिक्षण के सिद्धांत।</li>
+            <li>सुनने और बोलने की भूमिका; भाषा का कार्य।</li>
+            <li>संचार में व्याकरण की भूमिका पर महत्वपूर्ण दृष्टिकोण।</li>
+            <li>विविध कक्षाओं में भाषा सिखाने की चुनौतियाँ (कठिनाइयाँ, त्रुटियाँ, विकार)।</li>
+            <li>भाषा कौशल (LSRW)।</li>
+            <li>भाषा की समझ और प्रवीणता का मूल्यांकन।</li>
+            <li>शिक्षण-अधिगम सामग्री (पाठ्यपुस्तक, मल्टी-मीडिया, बहुभाषी संसाधन)।</li>
+            <li>उपचारात्मक शिक्षण।</li>
+        </ul>
+        
+        <hr style="margin: 2em 0; border: 0; border-top: 1px dashed #ccc;">
+
+        <h2>विषय विशिष्ट खंड (एक विकल्प चुनें)</h2>
+
+        <!-- IV. (A) Mathematics and Science -->
+        <h3>IV. (क) गणित और विज्ञान - <span class="question-count-inline">(कुल 60 प्रश्न)</span></h3>
+        <p>गणित और विज्ञान के भावी शिक्षकों के लिए। प्रश्न एनसीईआरटी कक्षा 6-8 के विषयों पर आधारित हैं, लेकिन मध्यम रूप से कठिन हो सकते हैं।</p>
+
+        <h4>(i) गणित <span class="question-count-inline">(30 प्रश्न)</span></h4>
+         <h5>क) विषय-वस्तु <span class="question-count-inline">(20 प्रश्न)</span></h5>
+        <ul>
+            <li>संख्या प्रणाली:
+                <ul>
+                    <li>अपनी संख्याओं को जानना, संख्याओं के साथ खेलना, पूर्ण संख्याएँ, ऋणात्मक संख्याएँ और पूर्णांक, भिन्न।</li>
+                </ul>
+            </li>
+            <li>बीजगणित:
+                <ul>
+                    <li>बीजगणित का परिचय, अनुपात और समानुपात।</li>
+                </ul>
+            </li>
+             <li>ज्यामिति:
+                <ul>
+                    <li>मूल ज्यामितीय विचार (2-डी), प्रारंभिक आकृतियों को समझना (2-डी, 3-डी), समरूपता (प्रतिबिंब), रचना (उपकरणों का उपयोग करके)।</li>
+                </ul>
+            </li>
+            <li>क्षेत्रमिति (क्षेत्रफल, परिमाप, आयतन)।</li>
+            <li>डेटा हैंडलिंग (आंकड़ा प्रबंधन)।</li>
+        </ul>
+         <h5>ख) शिक्षाशास्त्रीय मुद्दे <span class="question-count-inline">(10 प्रश्न)</span></h5>
+        <ul>
+            <li>गणित की प्रकृति / तार्किक सोच।</li>
+            <li>पाठ्यक्रम में गणित का स्थान।</li>
+            <li>गणित की भाषा।</li>
+            <li>सामुदायिक गणित।</li>
+            <li>गणित में मूल्यांकन।</li>
+            <li>गणित में उपचारात्मक शिक्षण।</li>
+            <li>गणित शिक्षण की समस्याएं।</li>
+        </ul>
+
+        <h4>(ii) विज्ञान <span class="question-count-inline">(30 प्रश्न)</span></h4>
+        <h5>क) विषय-वस्तु <span class="question-count-inline">(20 प्रश्न)</span></h5>
+        <ul>
+            <li>भोजन: स्रोत, घटक, सफाई।</li>
+            <li>पदार्थ: दैनिक उपयोग की सामग्री।</li>
+            <li>सजीव जगत (जीव, कोशिकाएं, आदि)।</li>
+            <li>गतिमान वस्तुएं, लोग और विचार (गति, बल, आदि)।</li>
+            <li>चीजें कैसे काम करती हैं: विद्युत धारा और सर्किट, चुंबक।</li>
+            <li>प्राकृतिक घटनाएँ (प्रकाश, ध्वनि, आदि)।</li>
+            <li>प्राकृतिक संसाधन (जल, वायु, वन, आदि)।</li>
+        </ul>
+        <h5>ख) शिक्षाशास्त्रीय मुद्दे <span class="question-count-inline">(10 प्रश्न)</span></h5>
+        <ul>
+            <li>विज्ञान की प्रकृति और संरचना।</li>
+            <li>प्राकृतिक विज्ञान / लक्ष्य और उद्देश्य।</li>
+            <li>विज्ञान को समझना और उसकी सराहना करना।</li>
+            <li>विज्ञान में दृष्टिकोण / एकीकृत दृष्टिकोण।</li>
+            <li>अवलोकन / प्रयोग / खोज (विज्ञान की विधि)।</li>
+            <li>विज्ञान शिक्षण में नवाचार।</li>
+            <li>विज्ञान के लिए पाठ्य सामग्री / सहायक सामग्री।</li>
+            <li>विज्ञान में मूल्यांकन (संज्ञानात्मक / साइकोमोटर / भावात्मक)।</li>
+            <li>विज्ञान शिक्षण की समस्याएं।</li>
+            <li>विज्ञान में उपचारात्मक शिक्षण।</li>
+        </ul>
+
+
+        <!-- V. Social Studies / Social Sciences -->
+        <h3>V. सामाजिक अध्ययन / सामाजिक विज्ञान - <span class="question-count-inline">(कुल 60 प्रश्न)</span></h3>
+        <p>सामाजिक अध्ययन के भावी शिक्षकों के लिए। इसमें एनसीईआरटी कक्षा 6-8 पर आधारित इतिहास, भूगोल और सामाजिक एवं राजनीतिक जीवन शामिल है, जिसकी कठिनाई वरिष्ठ माध्यमिक स्तर तक हो सकती है।</p>
+
+        <h4>क) विषय-वस्तु <span class="question-count-inline">(40 प्रश्न)</span></h4>
+        <ul>
+            <li><b>इतिहास:</b>
+                <ul>
+                    <li>कब, कहाँ और कैसे; सबसे पुराने समाज; पहले किसान/चरवाहे; पहले शहर; प्रारंभिक राज्य; नए विचार; पहला साम्राज्य; दूर देशों से संपर्क; राजनीतिक विकास; संस्कृति और विज्ञान; नए राजा/राज्य; दिल्ली के सुल्तान; वास्तुकला; साम्राज्य का निर्माण; सामाजिक परिवर्तन; क्षेत्रीय संस्कृतियाँ; कंपनी शक्ति की स्थापना; ग्रामीण जीवन; उपनिवेशवाद और जनजातीय समाज; 1857-58 का विद्रोह; महिला और सुधार; जाति व्यवस्था को चुनौती; राष्ट्रवादी आंदोलन; स्वतंत्रता के बाद भारत।</li>
+                </ul>
+            </li>
+            <li><b>भूगोल:</b>
+                <ul>
+                    <li>एक सामाजिक अध्ययन और विज्ञान के रूप में भूगोल; सौर मंडल में ग्रह पृथ्वी; ग्लोब; पर्यावरण (प्राकृतिक और मानव); वायु; जल; मानव पर्यावरण (बस्ती, परिवहन, संचार); संसाधन (प्राकृतिक और मानव); कृषि।</li>
+                </ul>
+            </li>
+             <li><b>सामाजिक और राजनीतिक जीवन (नागरिक शास्त्र):</b>
+                <ul>
+                    <li>विविधता; सरकार; स्थानीय सरकार; जीविका चलाना; लोकतंत्र; राज्य सरकार; मीडिया को समझना; लिंग को खोलना; संविधान; संसदीय सरकार; न्यायपालिका; सामाजिक न्याय और हाशिए पर पड़े लोग।</li>
+                </ul>
+            </li>
+        </ul>
+
+        <h4>ख) शिक्षाशास्त्रीय मुद्दे <span class="question-count-inline">(20 प्रश्न)</span></h4>
+        <ul>
+            <li>सामाजिक विज्ञान / सामाजिक अध्ययन की अवधारणा और प्रकृति।</li>
+            <li>कक्षा प्रक्रियाएं, गतिविधियां और संवाद।</li>
+            <li>आलोचनात्मक सोच का विकास।</li>
+            <li>पूछताछ / अनुभवजन्य साक्ष्य।</li>
+            <li>सामाजिक विज्ञान / सामाजिक अध्ययन पढ़ाने की समस्याएं।</li>
+            <li>स्रोत - प्राथमिक और माध्यमिक।</li>
+            <li>परियोजना कार्य।</li>
+            <li>सामाजिक अध्ययन में मूल्यांकन।</li>
+        </ul>
+
+        <hr style="margin: 2em 0; border: 0; border-top: 1px dashed #ccc;">
+
+        <p class="note"><strong>अध्ययन सुझाव:</strong> एनसीईआरटी पुस्तकों (कक्षा 6-8) की अवधारणाओं को अच्छी तरह समझने पर ध्यान केंद्रित करें। शिक्षाशास्त्रीय मुद्दों के लिए, सोचें कि आप वास्तव में इन विषयों को मध्य विद्यालय के छात्रों को आकर्षक और प्रभावी ढंग से कैसे पढ़ाएंगे।</p>
+         <p>त्वरित संदर्भ के लिए आप आमतौर पर आधिकारिक सिलेबस का डाउनलोड करने योग्य PDF संस्करण ऑनलाइन पा सकते हैं। आपकी तैयारी के लिए शुभकामनाएँ!</p>
+
+    </div>
 </body>
 </html>
