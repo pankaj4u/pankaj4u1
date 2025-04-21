@@ -1,128 +1,445 @@
 <!DOCTYPE html>
-<html lang="hi">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CTET Syllabus 2025</title>
+    <title>CTET Paper 1 Syllabus</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
             background-color: #f9f9f9;
+            margin: 0;
+            padding: 20px;
         }
-        header {
-            background-color: #4CAF50;
-            color: white;
+
+        .container {
+            max-width: 900px;
+            margin: 20px auto;
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        h1, h2, h3 {
+            color: #0056b3; /* Primary Blue */
+            margin-bottom: 0.8em;
+        }
+
+        h1 {
             text-align: center;
-            padding: 1rem 0;
+            font-size: 2.2em;
+            border-bottom: 2px solid #007bff; /* Lighter Blue */
+            padding-bottom: 10px;
+            margin-bottom: 1em;
         }
-        main {
-            padding: 2rem;
-        }
-        section {
-            background: white;
-            margin: 1rem 0;
-            padding: 1rem;
-            border-radius: 8px;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-        }
+
         h2 {
-            color: #4CAF50;
+            font-size: 1.8em;
+            color: #007bff; /* Lighter Blue */
+            border-left: 5px solid #0056b3;
+            padding-left: 10px;
+            margin-top: 2em;
         }
-        ul {
-            padding-left: 1.5rem;
+
+        h3 {
+            font-size: 1.4em;
+            color: #17a2b8; /* Info Teal */
+            margin-top: 1.5em;
         }
+                
+        h4 {
+            font-size: 1.1em;
+            color: #333;
+            font-weight: bold;
+            margin-top: 1.5em;
+            margin-bottom: 0.5em;
+        }
+
+        p {
+            margin-bottom: 1em;
+            color: #555;
+        }
+
         table {
             width: 100%;
             border-collapse: collapse;
-            margin-top: 1rem;
+            margin-top: 20px;
+            margin-bottom: 30px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
         }
-        table, th, td {
-            border: 1px solid #ddd;
-        }
+
         th, td {
-            padding: 0.5rem;
+            border: 1px solid #e0e0e0;
+            padding: 12px 15px;
             text-align: left;
+            vertical-align: top; /* Align content to top */
         }
+
         th {
-            background-color: #4CAF50;
-            color: white;
+            background-color: #007bff; /* Lighter Blue */
+            color: #ffffff;
+            font-weight: bold;
+            font-size: 1.1em;
         }
-        footer {
-            text-align: center;
-            padding: 1rem;
-            background-color: #4CAF50;
-            color: white;
-            margin-top: 2rem;
+
+        tr:nth-child(even) {
+            background-color: #f2f8ff; /* Very Light Blue */
         }
+
+        tr:hover {
+            background-color: #e6f2ff; /* Slightly Darker Hover */
+        }
+
+        ul {
+            list-style: none; /* Remove default bullets */
+            padding-left: 0;
+            margin-top: 0.5em;
+        }
+
+        ul li {
+            padding-left: 25px;
+            position: relative;
+            margin-bottom: 8px;
+            color: #444;
+        }
+
+        ul li::before {
+            content: '✓'; /* Use a checkmark or other symbol */
+            position: absolute;
+            left: 0;
+            color: #28a745; /* Success Green */
+            font-weight: bold;
+            font-size: 1.1em;
+            top: 0px; /* Adjust vertical position if needed */
+        }
+        
+        .note {
+            background-color: #e7f3fe;
+            border-left: 5px solid #007bff;
+            padding: 15px;
+            margin-top: 20px;
+            border-radius: 5px;
+            font-size: 0.95em;
+            color: #004085;
+        }
+
+        .question-count {
+            font-weight: bold;
+            color: #dc3545; /* Red for emphasis */
+        }
+        
+        .topic-split {
+            font-size: 0.9em;
+            color: #666;
+            margin-top: 5px;
+        }
+
+        /* Making the table responsive */
+        @media (max-width: 768px) {
+            th, td {
+                font-size: 0.9em;
+                padding: 8px 10px;
+            }
+            h1 { font-size: 1.8em; }
+            h2 { font-size: 1.5em; }
+            h3 { font-size: 1.2em; }
+            .container { padding: 20px; }
+        }
+
+        @media (max-width: 480px) {
+             /* Force table elements to not stack */
+            table, thead, tbody, th, td, tr {
+                display: block;
+            }
+             /* Hide table headers (but not display: none;, for accessibility) */
+            thead tr {
+                position: absolute;
+                top: -9999px;
+                left: -9999px;
+            }
+            tr { border: 1px solid #ccc; margin-bottom: 10px; }
+            td {
+                /* Behave like a "row" */
+                border: none;
+                border-bottom: 1px solid #eee;
+                position: relative;
+                padding-left: 50%; /* Space for label */
+                 white-space: normal; /* Allow text wrap */
+                 text-align: right; /* Align value to the right */
+            }
+            td::before {
+                /* Now like a table header label */
+                position: absolute;
+                left: 10px; /* Position label */
+                width: 45%; /* Label width */
+                padding-right: 10px;
+                white-space: nowrap; /* Prevent label wrap */
+                text-align: left; /* Align label text */
+                font-weight: bold;
+                content: attr(data-label); /* Use data-label attribute */
+                 color: #0056b3; /* Label color */
+            }
+             td[data-label="Section"] { font-size: 1.1em; background-color: #f2f8ff; font-weight: bold; text-align: left; padding-left: 10px;} /* Style the first "cell" like a heading */
+             td[data-label="Topics / Breakdown"], td[data-label="No. of Questions"] { text-align: left; padding-left: 10px;} /* Align other cells */
+             td[data-label="Topics / Breakdown"]::before, td[data-label="No. of Questions"]::before { display: none; } /* Hide labels for these */
+        }
+
     </style>
 </head>
 <body>
-    <header>
-        <h1>सीटेट सिलेबस 2025</h1>
-        <p>कक्षा 1 से 5 के लिए</p>
-    </header>
-    <main>
-        <section>
-            <h2>परीक्षा विवरण</h2>
-            <ul>
-                <li>कुल अंक: 150</li>
-                <li>प्रश्नों की संख्या: 150</li>
-                <li>प्रत्येक सही उत्तर के लिए 1 अंक</li>
-                <li>कोई नकारात्मक अंकन नहीं</li>
-                <li>परीक्षा अवधि: 2.5 घंटे</li>
-            </ul>
-        </section>
-        <section>
-            <h2>विषयवार अंक वितरण</h2>
-            <table>
-                <thead>
-                    <tr>
-                        <th>विषय</th>
-                        <th>प्रश्नों की संख्या</th>
-                        <th>अंक</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>बाल विकास और शिक्षाशास्त्र</td>
-                        <td>30</td>
-                        <td>30</td>
-                    </tr>
-                    <tr>
-                        <td>भाषा I (हिंदी)</td>
-                        <td>30</td>
-                        <td>30</td>
-                    </tr>
-                    <tr>
-                        <td>भाषा II (अंग्रेजी/अन्य)</td>
-                        <td>30</td>
-                        <td>30</td>
-                    </tr>
-                    <tr>
-                        <td>गणित</td>
-                        <td>30</td>
-                        <td>30</td>
-                    </tr>
-                    <tr>
-                        <td>पर्यावरण अध्ययन</td>
-                        <td>30</td>
-                        <td>30</td>
-                    </tr>
-                </tbody>
-            </table>
-        </section>
-        <section>
-            <h2>विस्तृत सिलेबस</h2>
-            <ul>
-                <li><strong>बाल विकास और शिक्षाशास्त्र:</strong> बाल विकास के सिद्धांत, अधिगम और शिक्षण पद्धतियाँ</li>
-                <li><strong>भाषा I:</strong> भाषा समझ, व्याकरण, शिक्षण पद्धतियाँ</li>
-                <li><strong>भाषा II:</strong> भाषा समझ, व्याकरण, शिक्षण पद्धतियाँ</li>
-                <li><strong>गणित:</strong> संख्या प्रणाली, ज्यामिति, मापन और समय</li>
-                <li><strong>पर्यावरण अध्ययन:</strong> पारिस्थितिकी, सामाजिक अध्ययन, विज्ञान</li>
-            </ul>
-        </section>
-    </main>
+    <div class="container">
+
+        <h1>CTET Paper 1 Syllabus Guide (For Class 10 Students!)</h1>
+
+        <p>Hey future teachers! If you're aiming to teach Classes 1 to 5, you'll need to clear the CTET Paper 1 exam. Knowing what's in the syllabus is like having a map for your preparation journey. Let's break it down into simple parts so you know exactly what to focus on.</p>
+
+        <p>The exam tests not just what you know, but also how you would teach it to young children (ages 6-11). Each correct answer gets you 1 mark, and good news – there’s no negative marking!</p>
+
+        <h2>Exam Sections at a Glance</h2>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Section</th>
+                    <th>Topics / Breakdown</th>
+                    <th>No. of Questions</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td data-label="Section">Child Development & Pedagogy (CDP)</td>
+                    <td data-label="Topics / Breakdown">
+                        Understanding child growth, learning, and special needs.
+                        <div class="topic-split">
+                           • Child Development: 15 Qs <br>
+                           • Inclusive Education: 5 Qs <br>
+                           • Learning & Teaching Methods: 10 Qs
+                        </div>
+                    </td>
+                    <td data-label="No. of Questions" class="question-count">30</td>
+                </tr>
+                <tr>
+                    <td data-label="Section">Language 1</td>
+                    <td data-label="Topics / Breakdown">
+                        Focuses on your main teaching language skills.
+                        <div class="topic-split">
+                           • Reading Comprehension: 15 Qs <br>
+                           • How to Teach Language: 15 Qs
+                        </div>
+                    </td>
+                    <td data-label="No. of Questions" class="question-count">30</td>
+                </tr>
+                <tr>
+                    <td data-label="Section">Language 2</td>
+                    <td data-label="Topics / Breakdown">
+                        Tests skills in a second language (different from Language 1).
+                        <div class="topic-split">
+                           • Reading Comprehension: 15 Qs <br>
+                           • How to Teach Language: 15 Qs
+                        </div>
+                    </td>
+                    <td data-label="No. of Questions" class="question-count">30</td>
+                </tr>
+                <tr>
+                    <td data-label="Section">Mathematics</td>
+                    <td data-label="Topics / Breakdown">
+                        Basic math concepts (like from Classes 1-5) and how to teach them.
+                         <div class="topic-split">
+                           • Math Content: 15 Qs <br>
+                           • How to Teach Math: 15 Qs
+                        </div>
+                    </td>
+                    <td data-label="No. of Questions" class="question-count">30</td>
+                </tr>
+                 <tr>
+                    <td data-label="Section">Environmental Studies (EVS)</td>
+                    <td data-label="Topics / Breakdown">
+                        Everyday science & social science topics (food, water, family etc.) and teaching methods.
+                         <div class="topic-split">
+                           • EVS Content: 15 Qs <br>
+                           • How to Teach EVS: 15 Qs
+                        </div>
+                    </td>
+                    <td data-label="No. of Questions" class="question-count">30</td>
+                </tr>
+                 <tr>
+                    <td data-label="Section"><strong>Total</strong></td>
+                    <td data-label="Topics / Breakdown"><strong>All sections combined</strong></td>
+                    <td data-label="No. of Questions" class="question-count"><strong>150</strong></td>
+                </tr>
+            </tbody>
+        </table>
+
+        <p class="note">Remember, for Languages, Math, and EVS, half the questions test your knowledge of the subject (Content), and the other half test how you'd teach it (Pedagogy).</p>
+
+        <hr style="margin: 2em 0; border: 0; border-top: 1px dashed #ccc;">
+
+        <h2>Detailed Syllabus Breakdown</h2>
+
+        <!-- Child Development and Pedagogy -->
+        <h3>Child Development and Pedagogy (CDP) - 30 Questions</h3>
+        <p>This is super important! It’s all about understanding how young kids (primary school level, ages 6-11) learn and grow.</p>
+
+        <h4>a) Child Development (Primary School Child) - <span class="question-count">15 Questions</span></h4>
+        <ul>
+            <li>What development means & how it connects to learning.</li>
+            <li>Basic rules of how children develop.</li>
+            <li>How family background (Heredity) & surroundings (Environment) affect kids.</li>
+            <li>How kids become social (talking to teachers, parents, friends).</li>
+            <li>Ideas from thinkers like Piaget, Kohlberg, and Vygotsky about how kids think.</li>
+            <li>Teaching that focuses on the child and encourages progress.</li>
+            <li>Thinking critically about 'intelligence' – what does it really mean?</li>
+            <li>Understanding that intelligence has many sides (Multi-Dimensional).</li>
+            <li>How language and thinking are linked.</li>
+            <li>Gender issues: seeing gender as a social idea, gender roles, bias, and how it affects school.</li>
+            <li>Why every student is different (based on language, caste, gender, community, religion, etc.) and how to understand these differences.</li>
+            <li>Difference between checking learning *while* it happens (Assessment for learning) vs. *after* it happens (Assessment of learning).</li>
+            <li>School-Based Assessment & Continuous Comprehensive Evaluation (CCE) – what they are and how to use them.</li>
+            <li>Asking the right questions to see if students are ready to learn, helping them think critically, and checking what they've achieved.</li>
+        </ul>
+
+        <h4>b) Concept of Inclusive Education & Understanding Children with Special Needs - <span class="question-count">5 Questions</span></h4>
+        <ul>
+            <li>Teaching students from all backgrounds, including those facing disadvantages.</li>
+            <li>Helping children who have learning difficulties or impairments.</li>
+            <li>Working with gifted, creative, and specially-abled students.</li>
+        </ul>
+
+        <h4>c) Learning and Pedagogy (How Teaching Happens) - <span class="question-count">10 Questions</span></h4>
+        <ul>
+            <li>How children think and learn; why some kids struggle in school.</li>
+            <li>The basics of teaching and learning; how kids learn best (e.g., learning as a social thing).</li>
+            <li>Seeing children as problem solvers and little 'scientists'.</li>
+            <li>Different ideas about how learning happens; seeing children's 'mistakes' as important steps in learning.</li>
+            <li>How feelings (Emotions) and thinking (Cognition) are connected.</li>
+            <li>What motivates kids to learn.</li>
+            <li>Things that help learning – both personal (like interest) and environmental (like classroom atmosphere).</li>
+        </ul>
+
+        <!-- Language 1 -->
+        <h3>Language 1 - 30 Questions</h3>
+        <p>This section checks your skills in the main language you'll use for teaching (e.g., Hindi or English, whichever you choose as Language 1).</p>
+
+        <h4>a) Language Comprehension - <span class="question-count">15 Questions</span></h4>
+        <ul>
+            <li>Reading two unseen passages:
+                <ul>
+                    <li>One might be a story, drama, or article (literary, scientific, narrative, or discursive).</li>
+                    <li>One will likely be a poem.</li>
+                </ul>
+            </li>
+            <li>Answering questions based on the passages about understanding, guessing meaning (inference), grammar, and vocabulary.</li>
+        </ul>
+
+        <h4>b) Pedagogy of Language Development (How to Teach Language) - <span class="question-count">15 Questions</span></h4>
+        <ul>
+            <li>How kids learn and acquire language naturally.</li>
+            <li>Principles of teaching a language.</li>
+            <li>The importance of listening and speaking; how children use language as a tool.</li>
+            <li>Thinking critically about grammar's role in learning to communicate (speaking and writing).</li>
+            <li>Challenges of teaching language in a classroom with diverse students; dealing with language difficulties, errors, and disorders.</li>
+            <li>Developing Language Skills (Listening, Speaking, Reading, Writing - LSRW).</li>
+            <li>Checking how well students understand and use the language (speaking, listening, reading, writing).</li>
+            <li>Using teaching materials: Textbooks, computers/videos (multi-media), using different languages present in the classroom as a resource.</li>
+            <li>Helping students who are struggling (Remedial Teaching).</li>
+        </ul>
+
+        <!-- Language 2 -->
+        <h3>Language 2 - 30 Questions</h3>
+        <p>Similar to Language 1, but focuses on a different language you choose. It tests your basic understanding and communication ability in that second language.</p>
+
+        <h4>a) Comprehension - <span class="question-count">15 Questions</span></h4>
+        <ul>
+            <li>Reading two unseen *prose* passages (these could be argumentative, literary, story-like, or scientific).</li>
+            <li>Answering questions about understanding, grammar, and vocabulary based on the passages.</li>
+        </ul>
+
+        <h4>b) Pedagogy of Language Development (How to Teach Language) - <span class="question-count">15 Questions</span></h4>
+        <ul>
+            <li>How kids learn and acquire language naturally.</li>
+            <li>Principles of teaching a language.</li>
+            <li>The importance of listening and speaking; how children use language as a tool.</li>
+            <li>Thinking critically about grammar's role in learning to communicate.</li>
+            <li>Challenges of teaching language in diverse classrooms; dealing with difficulties, errors, disorders.</li>
+            <li>Developing Language Skills (LSRW).</li>
+            <li>Checking language understanding and skills.</li>
+            <li>Using teaching materials: Textbooks, multi-media, multilingual resources.</li>
+            <li>Helping students who need extra support (Remedial Teaching).</li>
+        </ul>
+        
+         <!-- Mathematics -->
+        <h3>Mathematics - 30 Questions</h3>
+        <p>Don't worry, the math questions are usually based on topics from Classes 1-5. Half the questions are on math concepts, and half are on how to teach math effectively.</p>
+
+        <h4>a) Content - <span class="question-count">15 Questions</span></h4>
+        <ul>
+            <li>Geometry (Basic shapes)</li>
+            <li>Shapes & Understanding Space (like near/far, inside/outside)</li>
+            <li>Solid shapes around us (like cubes, spheres)</li>
+            <li>Numbers (counting, place value)</li>
+            <li>Addition and Subtraction</li>
+            <li>Multiplication</li>
+            <li>Division</li>
+            <li>Measurement (length, weight, capacity)</li>
+            <li>Weight</li>
+            <li>Time (reading clocks, calendar)</li>
+            <li>Volume</li>
+            <li>Data Handling (reading simple charts/graphs)</li>
+            <li>Patterns (number and shape patterns)</li>
+            <li>Money (adding, subtracting money)</li>
+        </ul>
+
+        <h4>b) Pedagogical issues (How to Teach Math) - <span class="question-count">15 Questions</span></h4>
+        <ul>
+            <li>The nature of Math (is it logical?); understanding how kids think about math.</li>
+            <li>Why Math is important in the school curriculum.</li>
+            <li>The language used in Math classrooms.</li>
+            <li>Connecting Math to the community and real life.</li>
+            <li>Checking student understanding (formal tests and informal observation).</li>
+            <li>Common problems faced while teaching Math.</li>
+            <li>Looking at student errors to understand their thinking (Error analysis).</li>
+            <li>Finding out specific problems students have (Diagnostic) and helping them fix it (Remedial Teaching).</li>
+        </ul>
+        
+         <!-- Environmental Studies (EVS) -->
+        <h3>Environmental Studies (EVS) - 30 Questions</h3>
+        <p>This section combines basic science and social studies concepts relevant to young children's lives. It's often a good scoring section!</p>
+
+        <h4>a) Content - <span class="question-count">15 Questions</span></h4>
+        <ul>
+            <li>Family and Friends (Relationships, Work and Play, Animals, Plants)</li>
+            <li>Food (Where it comes from, cooking, eating habits)</li>
+            <li>Shelter (Types of houses, why we need them)</li>
+            <li>Water (Sources, importance, conservation)</li>
+            <li>Travel (Means of transport, places)</li>
+            <li>Things We Make and Do (Crafts, occupations)</li>
+        </ul>
+
+        <h4>b) Pedagogical Issues (How to Teach EVS) - <span class="question-count">15 Questions</span></h4>
+        <ul>
+            <li>What EVS is all about (Concept and scope).</li>
+            <li>Why EVS is important; teaching it as an integrated subject (combining science/social science).</li>
+            <li>Environmental Studies & Environmental Education - how they relate.</li>
+            <li>How children learn EVS best (Learning Principles).</li>
+            <li>Connecting EVS to Science & Social Science.</li>
+            <li>Different ways to introduce concepts (Approaches).</li>
+            <li>Using Activities to teach.</li>
+            <li>Importance of Experiments/Practical Work.</li>
+            <li>Using Discussions in class.</li>
+            <li>Continuous Comprehensive Evaluation (CCE) in EVS.</li>
+            <li>Teaching materials and aids for EVS.</li>
+            <li>Common problems faced while teaching EVS.</li>
+        </ul>
+
+        <hr style="margin: 2em 0; border: 0; border-top: 1px dashed #ccc;">
+
+        <p class="note"><strong>Quick Tip:</strong> You can usually find a downloadable PDF version of the official syllabus online. Having that handy is great for detailed reference!</p>
+
+        <p>Hope this breakdown helps you organize your studies. Good luck with your preparation!</p>
+
+    </div>
 </body>
 </html>
