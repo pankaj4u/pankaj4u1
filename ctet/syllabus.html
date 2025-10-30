@@ -1,461 +1,934 @@
-<!DOCTYPE html>
-<html lang="hi">
+<!doctype html>
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
+    <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>सीटेट पेपर 1 सिलेबस (हिन्दी)</title>
-    <style>
-        body {
-            font-family: 'Noto Sans Devanagari', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Added Devanagari font */
-            line-height: 1.7; /* Slightly increased for Hindi readability */
-            color: #333;
-            background-color: #f9f9f9;
-            margin: 0;
-            padding: 20px;
-        }
-
-        .container {
-            max-width: 900px;
-            margin: 20px auto;
-            background-color: #fff;
-            padding: 30px;
-            border-radius: 10px;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-        }
-
-        h1, h2, h3 {
-            color: #0056b3; /* Primary Blue */
-            margin-bottom: 0.8em;
-        }
-
-        h1 {
-            text-align: center;
-            font-size: 2.2em;
-            border-bottom: 2px solid #007bff; /* Lighter Blue */
-            padding-bottom: 10px;
-            margin-bottom: 1em;
-        }
-
-        h2 {
-            font-size: 1.8em;
-            color: #007bff; /* Lighter Blue */
-            border-left: 5px solid #0056b3;
-            padding-left: 10px;
-            margin-top: 2em;
-        }
-
-        h3 {
-            font-size: 1.4em;
-            color: #17a2b8; /* Info Teal */
-            margin-top: 1.5em;
-        }
-                
-        h4 {
-            font-size: 1.1em;
-            color: #333;
-            font-weight: bold;
-            margin-top: 1.5em;
-            margin-bottom: 0.5em;
-        }
-
-        p {
-            margin-bottom: 1em;
-            color: #555;
-        }
-
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            margin-top: 20px;
-            margin-bottom: 30px;
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
-        }
-
-        th, td {
-            border: 1px solid #e0e0e0;
-            padding: 12px 15px;
-            text-align: left;
-            vertical-align: top; /* Align content to top */
-        }
-
-        th {
-            background-color: #007bff; /* Lighter Blue */
-            color: #ffffff;
-            font-weight: bold;
-            font-size: 1.1em;
-        }
-
-        tr:nth-child(even) {
-            background-color: #f2f8ff; /* Very Light Blue */
-        }
-
-        tr:hover {
-            background-color: #e6f2ff; /* Slightly Darker Hover */
-        }
-
-        ul {
-            list-style: none; /* Remove default bullets */
-            padding-left: 0;
-            margin-top: 0.5em;
-        }
-
-        ul li {
-            padding-left: 25px;
-            position: relative;
-            margin-bottom: 8px;
-            color: #444;
-        }
-
-        ul li::before {
-            content: '✓'; /* Use a checkmark or other symbol */
-            position: absolute;
-            left: 0;
-            color: #28a745; /* Success Green */
-            font-weight: bold;
-            font-size: 1.1em;
-            top: 2px; /* Adjust vertical position if needed for Hindi script */
-        }
-        
-        .note {
-            background-color: #e7f3fe;
-            border-left: 5px solid #007bff;
-            padding: 15px;
-            margin-top: 20px;
-            border-radius: 5px;
-            font-size: 0.95em;
-            color: #004085;
-        }
-
-        .question-count {
-            font-weight: bold;
-            color: #dc3545; /* Red for emphasis */
-            font-family: monospace; /* Ensure numbers align well */
-        }
-        
-        .topic-split {
-            font-size: 0.9em;
-            color: #666;
-            margin-top: 5px;
-        }
-
-        /* Making the table responsive */
-        @media (max-width: 768px) {
-            th, td {
-                font-size: 0.9em;
-                padding: 8px 10px;
-            }
-            h1 { font-size: 1.8em; }
-            h2 { font-size: 1.5em; }
-            h3 { font-size: 1.2em; }
-            .container { padding: 20px; }
-        }
-
-        @media (max-width: 480px) {
-             /* Force table elements to not stack */
-            table, thead, tbody, th, td, tr {
-                display: block;
-            }
-             /* Hide table headers (but not display: none;, for accessibility) */
-            thead tr {
-                position: absolute;
-                top: -9999px;
-                left: -9999px;
-            }
-            tr { border: 1px solid #ccc; margin-bottom: 10px; }
-            td {
-                /* Behave like a "row" */
-                border: none;
-                border-bottom: 1px solid #eee;
-                position: relative;
-                padding-left: 50%; /* Space for label */
-                 white-space: normal; /* Allow text wrap */
-                 text-align: right; /* Align value to the right */
-                 min-height: 24px; /* Ensure space for label even if cell is empty */
-            }
-            td::before {
-                /* Now like a table header label */
-                position: absolute;
-                left: 10px; /* Position label */
-                width: 45%; /* Label width */
-                padding-right: 10px;
-                white-space: nowrap; /* Prevent label wrap */
-                text-align: left; /* Align label text */
-                font-weight: bold;
-                content: attr(data-label); /* Use data-label attribute */
-                 color: #0056b3; /* Label color */
-            }
-             /* Style the first "cell" like a heading */
-             td[data-label="खंड/विषय"] { 
-                 font-size: 1.1em; 
-                 background-color: #f2f8ff; 
-                 font-weight: bold; 
-                 text-align: left; 
-                 padding-left: 10px;
-             } 
-             /* Align other cells */
-             td[data-label="विषय / विवरण"], td[data-label="प्रश्नों की संख्या"] { 
-                 text-align: left; 
-                 padding-left: 10px;
-             } 
-             /* Hide labels for these */
-             td[data-label="विषय / विवरण"]::before, td[data-label="प्रश्नों की संख्या"]::before { 
-                 display: none; 
-             } 
-        }
-
-    </style>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/purecss@3.0.0/build/grids-responsive-min.css">
 </head>
 <body>
-    <div class="container">
-
-        <h1>सीटेट पेपर 1 सिलेबस गाइड (कक्षा 10 के छात्रों के लिए!)</h1>
-
-        <p>नमस्ते भावी शिक्षकों! अगर आप कक्षा 1 से 5 तक पढ़ाने का लक्ष्य रखते हैं, तो आपको सीटेट पेपर 1 परीक्षा पास करनी होगी। यह जानना कि सिलेबस में क्या है, आपकी तैयारी की यात्रा के लिए एक नक्शे की तरह है। चलिए इसे सरल भागों में बांटते हैं ताकि आप जान सकें कि वास्तव में किस पर ध्यान केंद्रित करना है।</p>
-
-        <p>यह परीक्षा न केवल यह परखती है कि आप क्या जानते हैं, बल्कि यह भी कि आप छोटे बच्चों (6-11 वर्ष की आयु) को कैसे पढ़ाएंगे। प्रत्येक सही उत्तर के लिए आपको 1 अंक मिलता है, और अच्छी खबर यह है - कोई नेगेटिव मार्किंग नहीं है!</p>
-
-        <h2>परीक्षा के खंड एक नज़र में</h2>
-
-        <table>
-            <thead>
-                <tr>
-                    <th>खंड/विषय</th>
-                    <th>विषय / विवरण</th>
-                    <th>प्रश्नों की संख्या</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td data-label="खंड/विषय">बाल विकास और शिक्षाशास्त्र (CDP)</td>
-                    <td data-label="विषय / विवरण">
-                        बच्चों की वृद्धि, सीखने और विशेष जरूरतों को समझना।
-                        <div class="topic-split">
-                           • बाल विकास: 15 प्रश्न <br>
-                           • समावेशी शिक्षा: 5 प्रश्न <br>
-                           • सीखना और सिखाने के तरीके: 10 प्रश्न
-                        </div>
-                    </td>
-                    <td data-label="प्रश्नों की संख्या" class="question-count">30</td>
-                </tr>
-                <tr>
-                    <td data-label="खंड/विषय">भाषा 1</td>
-                    <td data-label="विषय / विवरण">
-                        आपकी मुख्य शिक्षण भाषा कौशल पर केंद्रित।
-                        <div class="topic-split">
-                           • भाषा अवबोधन (Comprehension): 15 प्रश्न <br>
-                           • भाषा कैसे सिखाएं (Pedagogy): 15 प्रश्न
-                        </div>
-                    </td>
-                    <td data-label="प्रश्नों की संख्या" class="question-count">30</td>
-                </tr>
-                <tr>
-                    <td data-label="खंड/विषय">भाषा 2</td>
-                    <td data-label="विषय / विवरण">
-                        दूसरी भाषा (भाषा 1 से भिन्न) में कौशल का परीक्षण।
-                        <div class="topic-split">
-                           • भाषा अवबोधन (Comprehension): 15 प्रश्न <br>
-                           • भाषा कैसे सिखाएं (Pedagogy): 15 प्रश्न
-                        </div>
-                    </td>
-                    <td data-label="प्रश्नों की संख्या" class="question-count">30</td>
-                </tr>
-                <tr>
-                    <td data-label="खंड/विषय">गणित</td>
-                    <td data-label="विषय / विवरण">
-                        बुनियादी गणित अवधारणाएँ (कक्षा 1-5 की तरह) और उन्हें कैसे सिखाया जाए।
-                         <div class="topic-split">
-                           • गणित विषय-वस्तु (Content): 15 प्रश्न <br>
-                           • गणित कैसे सिखाएं (Pedagogy): 15 प्रश्न
-                        </div>
-                    </td>
-                    <td data-label="प्रश्नों की संख्या" class="question-count">30</td>
-                </tr>
-                 <tr>
-                    <td data-label="खंड/विषय">पर्यावरण अध्ययन (EVS)</td>
-                    <td data-label="विषय / विवरण">
-                        रोजमर्रा के विज्ञान और सामाजिक विज्ञान के विषय (भोजन, पानी, परिवार आदि) और शिक्षण विधियाँ।
-                         <div class="topic-split">
-                           • EVS विषय-वस्तु (Content): 15 प्रश्न <br>
-                           • EVS कैसे सिखाएं (Pedagogy): 15 प्रश्न
-                        </div>
-                    </td>
-                    <td data-label="प्रश्नों की संख्या" class="question-count">30</td>
-                </tr>
-                 <tr>
-                    <td data-label="खंड/विषय"><strong>कुल</strong></td>
-                    <td data-label="विषय / विवरण"><strong>सभी खंड मिलाकर</strong></td>
-                    <td data-label="प्रश्नों की संख्या" class="question-count"><strong>150</strong></td>
-                </tr>
-            </tbody>
-        </table>
-
-        <p class="note">याद रखें, भाषा, गणित और EVS के लिए, आधे प्रश्न आपके विषय के ज्ञान (Content) का परीक्षण करते हैं, और दूसरे आधे यह परखते हैं कि आप इसे कैसे पढ़ाएंगे (Pedagogy)।</p>
-
-        <hr style="margin: 2em 0; border: 0; border-top: 1px dashed #ccc;">
-
-        <h2>विस्तृत सिलेबस विवरण</h2>
-
-        <!-- Child Development and Pedagogy -->
-        <h3>बाल विकास और शिक्षाशास्त्र (CDP) - <span class="question-count">30 प्रश्न</span></h3>
-        <p>यह बहुत महत्वपूर्ण है! यह सब छोटे बच्चों (प्राथमिक विद्यालय स्तर, 6-11 वर्ष) के सीखने और बड़े होने के तरीके को समझने के बारे में है।</p>
-
-        <h4>क) बाल विकास (प्राथमिक विद्यालय का बच्चा) - <span class="question-count">15 प्रश्न</span></h4>
-        <ul>
-            <li>विकास की अवधारणा और सीखने के साथ इसका संबंध।</li>
-            <li>बच्चों के विकास के सिद्धांत।</li>
-            <li>आनुवंशिकता और पर्यावरण का प्रभाव।</li>
-            <li>समाजीकरण प्रक्रियाएं: सामाजिक दुनिया और बच्चे (शिक्षक, माता-पिता, साथी)।</li>
-            <li>पियाजे, कोहलबर्ग और वायगोत्स्की: निर्माण और महत्वपूर्ण दृष्टिकोण।</li>
-            <li>बाल-केंद्रित और प्रगतिशील शिक्षा की अवधारणाएं।</li>
-            <li>बुद्धि के निर्माण का महत्वपूर्ण दृष्टिकोण।</li>
-            <li>बहु-आयामी बुद्धि।</li>
-            <li>भाषा और विचार।</li>
-            <li>लिंग एक सामाजिक निर्माण के रूप में; लिंग भूमिकाएं, लिंग-पूर्वाग्रह और शैक्षिक अभ्यास।</li>
-            <li>शिक्षार्थियों के बीच व्यक्तिगत अंतर, भाषा, जाति, लिंग, समुदाय, धर्म आदि की विविधता के आधार पर अंतर को समझना।</li>
-            <li>सीखने के लिए मूल्यांकन (Assessment for learning) और सीखने का मूल्यांकन (assessment of learning) के बीच अंतर।</li>
-            <li>स्कूल-आधारित मूल्यांकन, सतत और व्यापक मूल्यांकन (CCE): दृष्टिकोण और अभ्यास।</li>
-            <li>शिक्षार्थियों की तैयारी के स्तर का आकलन करने के लिए उपयुक्त प्रश्न तैयार करना; कक्षा में सीखने और महत्वपूर्ण सोच को बढ़ाना और शिक्षार्थी की उपलब्धि का आकलन करना।</li>
-        </ul>
-
-        <h4>ख) समावेशी शिक्षा की अवधारणा और विशेष आवश्यकता वाले बच्चों को समझना - <span class="question-count">5 प्रश्न</span></h4>
-        <ul>
-            <li>वंचित और अलाभान्वित सहित विविध पृष्ठभूमि के शिक्षार्थियों को संबोधित करना।</li>
-            <li>सीखने की कठिनाइयों, 'क्षीणता' आदि वाले बच्चों की जरूरतों को संबोधित करना।</li>
-            <li>प्रतिभाशाली, रचनात्मक, विशेष रूप से सक्षम शिक्षार्थियों को संबोधित करना।</li>
-        </ul>
-
-        <h4>ग) सीखना और शिक्षाशास्त्र (शिक्षण कैसे होता है) - <span class="question-count">10 प्रश्न</span></h4>
-        <ul>
-            <li>बच्चे कैसे सोचते और सीखते हैं; बच्चे स्कूल के प्रदर्शन में सफलता प्राप्त करने में 'असफल' क्यों और कैसे होते हैं।</li>
-            <li>शिक्षण और सीखने की बुनियादी प्रक्रियाएं; बच्चों की सीखने की रणनीतियाँ; एक सामाजिक गतिविधि के रूप में सीखना; सीखने का सामाजिक संदर्भ।</li>
-            <li>एक समस्या समाधानकर्ता और एक 'वैज्ञानिक अन्वेषक' के रूप में बच्चा।</li>
-            <li>बच्चों में सीखने की वैकल्पिक अवधारणाएँ, बच्चों की 'त्रुटियों' को सीखने की प्रक्रिया में महत्वपूर्ण कदमों के रूप में समझना।</li>
-            <li>संज्ञान और भावनाएँ।</li>
-            <li>अभिप्रेरणा और सीखना।</li>
-            <li>सीखने में योगदान देने वाले कारक - व्यक्तिगत और पर्यावरणीय।</li>
-        </ul>
-
-        <!-- Language 1 -->
-        <h3>भाषा 1 - <span class="question-count">30 प्रश्न</span></h3>
-        <p>यह खंड आपकी उस मुख्य भाषा में आपके कौशल की जाँच करता है जिसका उपयोग आप शिक्षण के लिए करेंगे (जैसे, हिंदी या अंग्रेजी, जो भी आप भाषा 1 के रूप में चुनते हैं)।</p>
-
-        <h4>क) भाषा अवबोधन (Language Comprehension) - <span class="question-count">15 प्रश्न</span></h4>
-        <ul>
-            <li>दो अनदेखे गद्यांश पढ़ना:
-                <ul>
-                    <li>एक गद्य या नाटक या लेख हो सकता है (साहित्यिक, वैज्ञानिक, कथात्मक, या विवेचनात्मक)।</li>
-                    <li>एक संभवतः कविता होगी।</li>
-                </ul>
-            </li>
-            <li>समझ, अनुमान (inference), व्याकरण और शाब्दिक क्षमता पर आधारित प्रश्नों का उत्तर देना।</li>
-        </ul>
-
-        <h4>ख) भाषा विकास का शिक्षाशास्त्र (Pedagogy of Language Development) - <span class="question-count">15 प्रश्न</span></h4>
-        <ul>
-            <li>अधिगम और अर्जन (Learning and acquisition)।</li>
-            <li>भाषा शिक्षण के सिद्धांत।</li>
-            <li>सुनने और बोलने की भूमिका; भाषा का कार्य और बच्चे इसे एक उपकरण के रूप में कैसे उपयोग करते हैं।</li>
-            <li>मौखिक और लिखित रूप में विचारों को संप्रेषित करने के लिए भाषा सीखने में व्याकरण की भूमिका पर एक महत्वपूर्ण दृष्टिकोण।</li>
-            <li>एक विविध कक्षा में भाषा सिखाने की चुनौतियाँ; भाषा की कठिनाइयाँ, त्रुटियाँ और विकार।</li>
-            <li>भाषा कौशल (सुनना, बोलना, पढ़ना, लिखना - LSRW)।</li>
-            <li>भाषा की समझ और प्रवीणता का मूल्यांकन: बोलना, सुनना, पढ़ना और लिखना।</li>
-            <li>शिक्षण-अधिगम सामग्री: पाठ्यपुस्तक, मल्टी-मीडिया सामग्री, कक्षा के बहुभाषी संसाधन।</li>
-            <li>उपचारात्मक शिक्षण (Remedial Teaching)।</li>
-        </ul>
-
-        <!-- Language 2 -->
-        <h3>भाषा 2 - <span class="question-count">30 प्रश्न</span></h3>
-        <p>भाषा 1 के समान, लेकिन आपके द्वारा चुनी गई एक अलग भाषा पर केंद्रित है। यह उस दूसरी भाषा में आपकी बुनियादी समझ और संचार क्षमता का परीक्षण करता है।</p>
-
-        <h4>क) अवबोधन (Comprehension) - <span class="question-count">15 प्रश्न</span></h4>
-        <ul>
-            <li>दो अनदेखे *गद्य* अनुच्छेद (ये विवेचनात्मक या साहित्यिक, कथात्मक या वैज्ञानिक हो सकते हैं) पढ़ना।</li>
-            <li>अनुच्छेदों के आधार पर समझ, व्याकरण और शाब्दिक क्षमता पर आधारित प्रश्नों का उत्तर देना।</li>
-        </ul>
-
-        <h4>ख) भाषा विकास का शिक्षाशास्त्र (Pedagogy of Language Development) - <span class="question-count">15 प्रश्न</span></h4>
-        <ul>
-            <li>अधिगम और अर्जन।</li>
-            <li>भाषा शिक्षण के सिद्धांत।</li>
-            <li>सुनने और बोलने की भूमिका; भाषा का कार्य और बच्चे इसे एक उपकरण के रूप में कैसे उपयोग करते हैं।</li>
-            <li>संचार के लिए भाषा सीखने में व्याकरण की भूमिका पर एक महत्वपूर्ण दृष्टिकोण।</li>
-            <li>विविध कक्षाओं में भाषा सिखाने की चुनौतियाँ; कठिनाइयाँ, त्रुटियाँ, विकार।</li>
-            <li>भाषा कौशल (LSRW)।</li>
-            <li>भाषा की समझ और कौशल का मूल्यांकन।</li>
-            <li>शिक्षण-अधिगम सामग्री: पाठ्यपुस्तक, मल्टी-मीडिया, बहुभाषी संसाधन।</li>
-            <li>अतिरिक्त सहायता की आवश्यकता वाले छात्रों की मदद करना (उपचारात्मक शिक्षण)।</li>
-        </ul>
-        
-         <!-- Mathematics -->
-        <h3>गणित - <span class="question-count">30 प्रश्न</span></h3>
-        <p>चिंता न करें, गणित के प्रश्न आमतौर पर कक्षा 1-5 के विषयों पर आधारित होते हैं। आधे प्रश्न गणितीय अवधारणाओं पर होते हैं, और आधे गणित को प्रभावी ढंग से कैसे पढ़ाया जाए, इस पर होते हैं।</p>
-
-        <h4>क) विषय-वस्तु (Content) - <span class="question-count">15 प्रश्न</span></h4>
-        <ul>
-            <li>ज्यामिति (मूल आकृतियाँ)</li>
-            <li>आकृतियाँ और स्थानिक समझ (जैसे पास/दूर, अंदर/बाहर)</li>
-            <li>हमारे आसपास के ठोस पदार्थ (जैसे घन, गोला)</li>
-            <li>संख्याएँ (गिनती, स्थानीय मान)</li>
-            <li>जोड़ और घटाव</li>
-            <li>गुणा</li>
-            <li>भाग</li>
-            <li>माप (लंबाई, वजन, क्षमता)</li>
-            <li>वजन</li>
-            <li>समय (घड़ी पढ़ना, कैलेंडर)</li>
-            <li>आयतन</li>
-            <li>आंकड़ा प्रबंधन (सरल चार्ट/ग्राफ पढ़ना)</li>
-            <li>पैटर्न (संख्या और आकार पैटर्न)</li>
-            <li>मुद्रा (पैसे जोड़ना, घटाना)</li>
-        </ul>
-
-        <h4>ख) शिक्षाशास्त्रीय मुद्दे (Pedagogical issues) - <span class="question-count">15 प्रश्न</span></h4>
-        <ul>
-            <li>गणित की प्रकृति/तार्किक सोच; बच्चों की सोच और तर्क पैटर्न और अर्थ बनाने और सीखने की रणनीतियों को समझना।</li>
-            <li>पाठ्यक्रम में गणित का स्थान।</li>
-            <li>गणित की भाषा।</li>
-            <li>सामुदायिक गणित।</li>
-            <li>औपचारिक और अनौपचारिक तरीकों से मूल्यांकन।</li>
-            <li>शिक्षण की समस्याएं।</li>
-            <li>त्रुटि विश्लेषण और सीखने और सिखाने के संबंधित पहलू।</li>
-            <li>नैदानिक ​​और उपचारात्मक शिक्षण (Diagnostic and Remedial Teaching)।</li>
-        </ul>
-        
-         <!-- Environmental Studies (EVS) -->
-        <h3>पर्यावरण अध्ययन (EVS) - <span class="question-count">30 प्रश्न</span></h3>
-        <p>यह खंड छोटे बच्चों के जीवन से संबंधित बुनियादी विज्ञान और सामाजिक अध्ययन की अवधारणाओं को जोड़ता है। यह अक्सर अच्छा स्कोरिंग सेक्शन होता है!</p>
-
-        <h4>क) विषय-वस्तु (Content) - <span class="question-count">15 प्रश्न</span></h4>
-        <ul>
-            <li>परिवार और मित्र (रिश्ते, काम और खेल, पशु, पौधे)</li>
-            <li>भोजन (यह कहाँ से आता है, खाना बनाना, खाने की आदतें)</li>
-            <li>आश्रय (घरों के प्रकार, हमें उनकी आवश्यकता क्यों है)</li>
-            <li>पानी (स्रोत, महत्व, संरक्षण)</li>
-            <li>यात्रा (परिवहन के साधन, स्थान)</li>
-            <li>चीजें जो हम बनाते और करते हैं (शिल्प, व्यवसाय)</li>
-        </ul>
-
-        <h4>ख) शिक्षाशास्त्रीय मुद्दे (Pedagogical Issues) - <span class="question-count">15 प्रश्न</span></h4>
-        <ul>
-            <li>EVS की अवधारणा और कार्यक्षेत्र।</li>
-            <li>EVS का महत्व; इसे एक एकीकृत विषय के रूप में पढ़ाना (विज्ञान/सामाजिक विज्ञान का संयोजन)।</li>
-            <li>पर्यावरण अध्ययन और पर्यावरण शिक्षा - वे कैसे संबंधित हैं।</li>
-            <li>सीखने के सिद्धांत (बच्चे EVS कैसे सीखते हैं)।</li>
-            <li>विज्ञान और सामाजिक विज्ञान से संबंध और कार्यक्षेत्र।</li>
-            <li>अवधारणाओं को प्रस्तुत करने के दृष्टिकोण।</li>
-            <li>गतिविधियाँ।</li>
-            <li>प्रयोग/व्यावहारिक कार्य।</li>
-            <li>चर्चा।</li>
-            <li>सतत एवं व्यापक मूल्यांकन (CCE)।</li>
-            <li>शिक्षण सामग्री/सहायता।</li>
-            <li>समस्याएं (EVS शिक्षण में)।</li>
-        </ul>
-
-        <hr style="margin: 2em 0; border: 0; border-top: 1px dashed #ccc;">
-
-        <p class="note"><strong>त्वरित सुझाव:</strong> आप आमतौर पर आधिकारिक सिलेबस का डाउनलोड करने योग्य PDF संस्करण ऑनलाइन पा सकते हैं। विस्तृत संदर्भ के लिए इसे संभाल कर रखना बहुत अच्छा है!</p>
-
-        <p>आशा है कि यह विवरण आपकी पढ़ाई को व्यवस्थित करने में मदद करेगा। आपकी तैयारी के लिए शुभकामनाएं!</p>
-
-    </div>
+<blockquote>
+<p><a href="#पेपर-1-हिन्दी">पेपर 1</a> | <a href="#पेपर-2-हिन्दी">पेपर 2</a></p>
+<p><a href="#paper-1">Paper 1</a> | <a href="#paper-2">Paper 2</a>  </p>
+</blockquote>
+<hr>
+<h2 id="-1-1-">पेपर 1</h2>
+<h3 id="-span-style-color-d32f2f-span-"><span style="color:#d32f2f"><strong>परीक्षा संरचना</strong></span></h3>
+<table>
+<thead>
+<tr>
+<th><span style="color:#1976d2"><strong>खंड</strong></span></th>
+<th><span style="color:#388e3c"><strong>प्रश्न</strong></span></th>
+<th><span style="color:#f57c00"><strong>अंक</strong></span></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>बाल विकास और शिक्षाशास्त्र</td>
+<td>30</td>
+<td>30</td>
+</tr>
+<tr>
+<td>भाषा I</td>
+<td>30</td>
+<td>30</td>
+</tr>
+<tr>
+<td>भाषा II</td>
+<td>30</td>
+<td>30</td>
+</tr>
+<tr>
+<td>गणित</td>
+<td>30</td>
+<td>30</td>
+</tr>
+<tr>
+<td>पर्यावरण अध्ययन (EVS)</td>
+<td>30</td>
+<td>30</td>
+</tr>
+<tr>
+<td><strong>कुल</strong></td>
+<td><strong>150</strong></td>
+<td><strong>150</strong></td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h3 id="-span-style-color-d32f2f-i-30-span-"><span style="color:#d32f2f"><strong>I. बाल विकास और शिक्षाशास्त्र (30 प्रश्न)</strong></span></h3>
+<table>
+<thead>
+<tr>
+<th><span style="color:#7b1fa2"><strong>उप-खंड</strong></span></th>
+<th><span style="color:#c2185b"><strong>प्रश्न</strong></span></th>
+<th><span style="color:#f57c00"><strong>महत्वपूर्ण विषय</strong></span></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>क) बाल विकास (प्राथमिक विद्यालय का बच्चा)</strong></td>
+<td><strong>15</strong></td>
+<td><ul><li>विकास की अवधारणा और सीखने के साथ इसका संबंध</li><li>बच्चों के विकास के सिद्धांत</li><li>आनुवंशिकता और पर्यावरण का प्रभाव</li><li>समाजीकरण प्रक्रियाएं: सामाजिक दुनिया और बच्चे (शिक्षक, माता-पिता, साथी)</li><li>पियाजे, कोहलबर्ग और वायगोत्स्की: निर्माण और महत्वपूर्ण दृष्टिकोण</li><li>बाल-केंद्रित और प्रगतिशील शिक्षा की अवधारणाएं</li><li>बुद्धि के निर्माण का महत्वपूर्ण दृष्टिकोण</li><li>बहु-आयामी बुद्धि</li><li>भाषा और विचार</li><li>लिंग एक सामाजिक निर्माण के रूप में; लिंग भूमिकाएं, लिंग-पूर्वाग्रह और शैक्षिक अभ्यास</li><li>शिक्षार्थियों के बीच व्यक्तिगत अंतर (भाषा, जाति, लिंग, समुदाय, धर्म आदि के आधार पर)</li><li>सीखने के लिए मूल्यांकन और सीखने का मूल्यांकन के बीच अंतर; स्कूल-आधारित मूल्यांकन, सतत और व्यापक मूल्यांकन (CCE)</li><li>तत्परता के स्तर का आकलन करने, सीखने और महत्वपूर्ण सोच को बढ़ाने और शिक्षार्थी की उपलब्धि का आकलन करने के लिए प्रश्न तैयार करना</li></ul></td>
+</tr>
+<tr>
+<td><strong>ख) समावेशी शिक्षा की अवधारणा और विशेष आवश्यकता वाले बच्चों को समझना</strong></td>
+<td><strong>5</strong></td>
+<td><ul><li>वंचित/अलाभान्वित सहित विविध पृष्ठभूमि के शिक्षार्थियों को संबोधित करना</li><li>सीखने की कठिनाइयों, दुर्बलताओं आदि वाले बच्चों की जरूरतों को संबोधित करना</li><li>प्रतिभाशाली, रचनात्मक, विशेष रूप से सक्षम शिक्षार्थियों को संबोधित करना</li></ul></td>
+</tr>
+<tr>
+<td><strong>ग) सीखना और शिक्षाशास्त्र</strong></td>
+<td><strong>10</strong></td>
+<td><ul><li>बच्चे कैसे सोचते और सीखते हैं; बच्चे स्कूल में &#39;असफल&#39; क्यों हो सकते हैं</li><li>शिक्षण और सीखने की बुनियादी प्रक्रियाएं; बच्चों की सीखने की रणनीतियाँ; एक सामाजिक गतिविधि के रूप में सीखना</li><li>बच्चा एक समस्या समाधानकर्ता और &#39;वैज्ञानिक अन्वेषक&#39; के रूप में</li><li>सीखने की वैकल्पिक अवधारणाएँ; बच्चों की &#39;त्रुटियों&#39; को सीखने के चरणों के रूप में समझना</li><li>संज्ञान और भावनाएँ</li><li>अभिप्रेरणा और सीखना</li><li>सीखने में योगदान देने वाले कारक - व्यक्तिगत और पर्यावरणीय</li></ul></td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h3 id="-span-style-color-1976d2-ii-i-30-span-"><span style="color:#1976d2"><strong>II. भाषा I (30 प्रश्न)</strong></span></h3>
+<table>
+<thead>
+<tr>
+<th><span style="color:#7b1fa2"><strong>भाग</strong></span></th>
+<th><span style="color:#c2185b"><strong>प्रश्न</strong></span></th>
+<th><span style="color:#f57c00"><strong>विवरण</strong></span></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>क) भाषा अवबोधन</strong></td>
+<td><strong>15</strong></td>
+<td>दो अनदेखे गद्यांश पढ़ना: एक गद्य या नाटक, एक कविता। इन पर आधारित अवबोधन, अनुमान, व्याकरण और शाब्दिक क्षमता पर प्रश्न।</td>
+</tr>
+<tr>
+<td><strong>ख) भाषा विकास का शिक्षाशास्त्र</strong></td>
+<td><strong>15</strong></td>
+<td><ul><li>अधिगम और अर्जन</li><li>भाषा शिक्षण के सिद्धांत</li><li>सुनने और बोलने की भूमिका; भाषा का कार्य</li><li>संचार में व्याकरण की भूमिका पर महत्वपूर्ण दृष्टिकोण</li><li>विविध कक्षाओं में भाषा सिखाने की चुनौतियाँ (कठिनाइयाँ, त्रुटियाँ, विकार)</li><li>भाषा कौशल (LSRW)</li><li>भाषा की समझ और प्रवीणता का मूल्यांकन</li><li>शिक्षण-अधिगम सामग्री (पाठ्यपुस्तक, मल्टी-मीडिया, बहुभाषी संसाधन)</li><li>उपचारात्मक शिक्षण</li><li>एक उपकरण के रूप में आईटी</li></ul></td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h3 id="-span-style-color-1976d2-iii-ii-30-span-"><span style="color:#1976d2"><strong>III. भाषा II (30 प्रश्न)</strong></span></h3>
+<table>
+<thead>
+<tr>
+<th><span style="color:#7b1fa2"><strong>भाग</strong></span></th>
+<th><span style="color:#c2185b"><strong>प्रश्न</strong></span></th>
+<th><span style="color:#f57c00"><strong>विवरण</strong></span></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>क) अवबोधन</strong></td>
+<td><strong>15</strong></td>
+<td>दो अनदेखे <em>गद्य</em> अनुच्छेद (विवेचनात्मक, साहित्यिक, कथात्मक, या वैज्ञानिक)। इन पर आधारित प्रश्न।</td>
+</tr>
+<tr>
+<td><strong>ख) भाषा विकास का शिक्षाशास्त्र</strong></td>
+<td><strong>15</strong></td>
+<td>भाषा I के शिक्षाशास्त्र जैसा।</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h3 id="-span-style-color-388e3c-iv-30-span-"><span style="color:#388e3c"><strong>IV. गणित (30 प्रश्न)</strong></span></h3>
+<table>
+<thead>
+<tr>
+<th><span style="color:#7b1fa2"><strong>भाग</strong></span></th>
+<th><span style="color:#c2185b"><strong>प्रश्न</strong></span></th>
+<th><span style="color:#f57c00"><strong>विषय-वस्तु</strong></span></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>क) विषय-वस्तु</strong></td>
+<td><strong>15</strong></td>
+<td><ul><li>ज्यामिति (मूल आकृतियाँ)</li><li>आकृतियाँ और स्थानिक समझ (पास/दूर, अंदर/बाहर)</li><li>हमारे आसपास के ठोस पदार्थ (घन, गोला)</li><li>संख्याएँ (गिनती, स्थानीय मान)</li><li>जोड़ और घटाव</li><li>गुणा</li><li>भाग</li><li>माप (लंबाई, वजन, क्षमता)</li><li>वजन</li><li>समय (घड़ी, कैलेंडर)</li><li>आयतन</li><li>आंकड़ा प्रबंधन (चार्ट/ग्राफ)</li><li>पैटर्न</li><li>मुद्रा</li></ul></td>
+</tr>
+<tr>
+<td><strong>ख) शिक्षाशास्त्रीय मुद्दे</strong></td>
+<td><strong>15</strong></td>
+<td><ul><li>गणित की प्रकृति/तार्किक सोच</li><li>पाठ्यक्रम में गणित का स्थान</li><li>गणित की भाषा</li><li>सामुदायिक गणित</li><li>औपचारिक/अनौपचारिक मूल्यांकन</li><li>शिक्षण की समस्याएं</li><li>त्रुटि विश्लेषण</li><li>नैदानिक और उपचारात्मक शिक्षण</li></ul></td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h3 id="-span-style-color-388e3c-v-evs-30-span-"><span style="color:#388e3c"><strong>V. पर्यावरण अध्ययन (EVS) (30 प्रश्न)</strong></span></h3>
+<table>
+<thead>
+<tr>
+<th><span style="color:#7b1fa2"><strong>भाग</strong></span></th>
+<th><span style="color:#c2185b"><strong>प्रश्न</strong></span></th>
+<th><span style="color:#f57c00"><strong>विषय-वस्तु</strong></span></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>क) विषय-वस्तु</strong></td>
+<td><strong>15</strong></td>
+<td><ul><li>परिवार और मित्र (रिश्ते, काम, खेल, पशु, पौधे)</li><li>भोजन (स्रोत, खाना बनाना, आदतें)</li><li>आश्रय (घरों के प्रकार)</li><li>पानी (स्रोत, महत्व, संरक्षण)</li><li>यात्रा (परिवहन, स्थान)</li><li>चीजें जो हम बनाते और करते हैं</li></ul></td>
+</tr>
+<tr>
+<td><strong>ख) शिक्षाशास्त्रीय मुद्दे</strong></td>
+<td><strong>15</strong></td>
+<td><ul><li>EVS की अवधारणा और कार्यक्षेत्र</li><li>एकीकृत विषय के रूप में पढ़ाना</li><li>पर्यावरण अध्ययन और शिक्षा</li><li>सीखने के सिद्धांत</li><li>विज्ञान और सामाजिक विज्ञान से संबंध</li><li>अवधारणाओं को प्रस्तुत करने के दृष्टिकोण</li><li>गतिविधियाँ, प्रयोग, चर्चा</li><li>सतत एवं व्यापक मूल्यांकन (CCE)</li><li>शिक्षण सामग्री/सहायता</li><li>समस्याएं</li></ul></td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2 id="-2-2-">पेपर 2 (हिन्दी) {#पेपर-2-हिन्दी}</h2>
+<h3 id="-span-style-color-d32f2f-span-"><span style="color:#d32f2f"><strong>परीक्षा संरचना</strong></span></h3>
+<table>
+<thead>
+<tr>
+<th><span style="color:#1976d2"><strong>खंड</strong></span></th>
+<th><span style="color:#388e3c"><strong>प्रश्न</strong></span></th>
+<th><span style="color:#f57c00"><strong>अंक</strong></span></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>बाल विकास और शिक्षाशास्त्र</td>
+<td>30</td>
+<td>30</td>
+</tr>
+<tr>
+<td>भाषा I</td>
+<td>30</td>
+<td>30</td>
+</tr>
+<tr>
+<td>भाषा II</td>
+<td>30</td>
+<td>30</td>
+</tr>
+<tr>
+<td><strong>विकल्प क: गणित और विज्ञान</strong></td>
+<td>60 (30+30)</td>
+<td>60</td>
+</tr>
+<tr>
+<td><strong>विकल्प ख: सामाजिक अध्ययन</strong></td>
+<td>60</td>
+<td>60</td>
+</tr>
+<tr>
+<td><strong>कुल</strong></td>
+<td><strong>150</strong></td>
+<td><strong>150</strong></td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h3 id="-span-style-color-d32f2f-i-30-span-6-8-"><span style="color:#d32f2f"><strong>I. बाल विकास और शिक्षाशास्त्र (30 प्रश्न)</strong></span> <em>(कक्षा 6-8 स्तर)</em></h3>
+<table>
+<thead>
+<tr>
+<th><span style="color:#7b1fa2"><strong>उप-खंड</strong></span></th>
+<th><span style="color:#c2185b"><strong>प्रश्न</strong></span></th>
+<th><span style="color:#f57c00"><strong>महत्वपूर्ण विषय</strong></span></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>क) बाल विकास</strong></td>
+<td><strong>15</strong></td>
+<td>विकास, सिद्धांत, आनुवंशिकता, समाजीकरण, पियाजे, वायगोत्स्की, बुद्धि, लिंग, CCE <em>(कक्षा 6-8 संदर्भ में)</em></td>
+</tr>
+<tr>
+<td><strong>ख) समावेशी शिक्षा</strong></td>
+<td><strong>5</strong></td>
+<td>विविध पृष्ठभूमि, सीखने की कठिनाइयाँ, प्रतिभाशाली</td>
+</tr>
+<tr>
+<td><strong>ग) सीखना और शिक्षाशास्त्र</strong></td>
+<td><strong>10</strong></td>
+<td>सोच, असफलता के कारण, समस्या समाधान, वैकल्पिक अवधारणाएँ, अभिप्रेरणा</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h3 id="-span-style-color-1976d2-ii-i-30-span-"><span style="color:#1976d2"><strong>II. भाषा I (30 प्रश्न)</strong></span></h3>
+<table>
+<thead>
+<tr>
+<th><span style="color:#7b1fa2"><strong>भाग</strong></span></th>
+<th><span style="color:#c2185b"><strong>प्रश्न</strong></span></th>
+<th><span style="color:#f57c00"><strong>विवरण</strong></span></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>क) भाषा अवबोधन</strong></td>
+<td><strong>15</strong></td>
+<td>गद्य/नाटक + कविता</td>
+</tr>
+<tr>
+<td><strong>ख) शिक्षाशास्त्र</strong></td>
+<td><strong>15</strong></td>
+<td>अधिगम, LSRW, व्याकरण, उपचारात्मक शिक्षण</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h3 id="-span-style-color-1976d2-iii-ii-30-span-"><span style="color:#1976d2"><strong>III. भाषा II (30 प्रश्न)</strong></span></h3>
+<table>
+<thead>
+<tr>
+<th><span style="color:#7b1fa2"><strong>भाग</strong></span></th>
+<th><span style="color:#c2185b"><strong>प्रश्न</strong></span></th>
+<th><span style="color:#f57c00"><strong>विवरण</strong></span></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>क) अवबोधन</strong></td>
+<td><strong>15</strong></td>
+<td>दो गद्य अनुच्छेद</td>
+</tr>
+<tr>
+<td><strong>ख) शिक्षाशास्त्र</strong></td>
+<td><strong>15</strong></td>
+<td>भाषा I जैसा</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h3 id="-span-style-color-388e3c-iv-60-span-"><span style="color:#388e3c"><strong>IV. (क) गणित और विज्ञान (60 प्रश्न)</strong></span></h3>
+<h4 id="-30-"><strong>गणित (30 प्रश्न)</strong></h4>
+<table>
+<thead>
+<tr>
+<th><span style="color:#7b1fa2"><strong>भाग</strong></span></th>
+<th><span style="color:#c2185b"><strong>प्रश्न</strong></span></th>
+<th><span style="color:#f57c00"><strong>विषय</strong></span></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>क) विषय-वस्तु</strong></td>
+<td><strong>20</strong></td>
+<td><ul><li>संख्या प्रणाली (पूर्णांक, भिन्न)</li><li>बीजगणित (परिचय, अनुपात)</li><li>ज्यामिति (2D/3D, समरूपता, रचना)</li><li>क्षेत्रमिति</li><li>डेटा हैंडलिंग</li></ul></td>
+</tr>
+<tr>
+<td><strong>ख) शिक्षाशास्त्र</strong></td>
+<td><strong>10</strong></td>
+<td><ul><li>गणित की प्रकृति</li><li>पाठ्यक्रम में स्थान</li><li>भाषा</li><li>सामुदायिक गणित</li><li>मूल्यांकन</li><li>उपचारात्मक शिक्षण</li></ul></td>
+</tr>
+</tbody>
+</table>
+<h4 id="-30-"><strong>विज्ञान (30 प्रश्न)</strong></h4>
+<table>
+<thead>
+<tr>
+<th><span style="color:#7b1fa2"><strong>भाग</strong></span></th>
+<th><span style="color:#c2185b"><strong>प्रश्न</strong></span></th>
+<th><span style="color:#f57c00"><strong>विषय</strong></span></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>क) विषय-वस्तु</strong></td>
+<td><strong>20</strong></td>
+<td><ul><li>भोजन (स्रोत, घटक)</li><li>पदार्थ</li><li>सजीव जगत</li><li>गतिमान वस्तुएं</li><li>विद्युत, चुंबक</li><li>प्राकृतिक घटनाएँ (प्रकाश, ध्वनि)</li><li>प्राकृतिक संसाधन</li></ul></td>
+</tr>
+<tr>
+<td><strong>ख) शिक्षाशास्त्र</strong></td>
+<td><strong>10</strong></td>
+<td><ul><li>विज्ञान की प्रकृति</li><li>लक्ष्य और उद्देश्य</li><li>अवलोकन/प्रयोग</li><li>नवाचार</li><li>मूल्यांकन</li><li>उपचारात्मक शिक्षण</li></ul></td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h3 id="-span-style-color-388e3c-v-60-span-"><span style="color:#388e3c"><strong>V. (ख) सामाजिक अध्ययन / सामाजिक विज्ञान (60 प्रश्न)</strong></span></h3>
+<table>
+<thead>
+<tr>
+<th><span style="color:#7b1fa2"><strong>भाग</strong></span></th>
+<th><span style="color:#c2185b"><strong>प्रश्न</strong></span></th>
+<th><span style="color:#f57c00"><strong>विषय</strong></span></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>क) विषय-वस्तु</strong></td>
+<td><strong>40</strong></td>
+<td><ul><li><strong>इतिहास</strong>: प्रारंभिक समाज, पहले शहर, सुल्तान, मुगल, कंपनी शासन, स्वतंत्रता आंदोलन</li><li><strong>भूगोल</strong>: सौर मंडल, पर्यावरण, संसाधन, कृषि</li><li><strong>नागरिक शास्त्र</strong>: विविधता, सरकार, संविधान, न्यायपालिका</li></ul></td>
+</tr>
+<tr>
+<td><strong>ख) शिक्षाशास्त्र</strong></td>
+<td><strong>20</strong></td>
+<td><ul><li>अवधारणा और प्रकृति</li><li>कक्षा प्रक्रियाएं</li><li>आलोचनात्मक सोच</li><li>पूछताछ/साक्ष्य</li><li>स्रोत (प्राथमिक/माध्यमिक)</li><li>परियोजना कार्य</li><li>मूल्यांकन</li></ul></td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2 id="paper-1-english-paper-1-english-">Paper 1 (English) {#paper-1-english}</h2>
+<h3 id="-exam-structure-"><strong>Exam Structure</strong></h3>
+<table>
+<thead>
+<tr>
+<th><strong>Section</strong></th>
+<th><strong>Qs</strong></th>
+<th><strong>Marks</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Child Development &amp; Pedagogy</td>
+<td>30</td>
+<td>30</td>
+</tr>
+<tr>
+<td>Language I</td>
+<td>30</td>
+<td>30</td>
+</tr>
+<tr>
+<td>Language II</td>
+<td>30</td>
+<td>30</td>
+</tr>
+<tr>
+<td>Mathematics</td>
+<td>30</td>
+<td>30</td>
+</tr>
+<tr>
+<td>EVS</td>
+<td>30</td>
+<td>30</td>
+</tr>
+<tr>
+<td><strong>TOTAL</strong></td>
+<td><strong>150</strong></td>
+<td><strong>150</strong></td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h3 id="-i-child-development-pedagogy-30-qs-"><strong>I. Child Development &amp; Pedagogy (30 Qs)</strong></h3>
+<table>
+<thead>
+<tr>
+<th><strong>Sub-section</strong></th>
+<th><strong>Qs</strong></th>
+<th><strong>Topics</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Child Development</strong></td>
+<td>15</td>
+<td>Development &amp; learning, Heredity, Piaget, Vygotsky, Intelligence, Gender, CCE</td>
+</tr>
+<tr>
+<td><strong>Inclusive Education</strong></td>
+<td>5</td>
+<td>Diverse learners, Learning difficulties, Gifted</td>
+</tr>
+<tr>
+<td><strong>Learning &amp; Pedagogy</strong></td>
+<td>10</td>
+<td>How children think, Problem-solving, Motivation</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h3 id="-ii-language-i-iii-language-ii-30-30-qs-"><strong>II. Language I &amp; III. Language II (30+30 Qs)</strong></h3>
+<table>
+<thead>
+<tr>
+<th><strong>Part</strong></th>
+<th><strong>Qs</strong></th>
+<th><strong>Details</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Comprehension</strong></td>
+<td>15</td>
+<td>2 unseen passages</td>
+</tr>
+<tr>
+<td><strong>Pedagogy</strong></td>
+<td>15</td>
+<td>Acquisition, LSRW, Remedial teaching</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h3 id="-iv-mathematics-30-qs-"><strong>IV. Mathematics (30 Qs)</strong></h3>
+<table>
+<thead>
+<tr>
+<th><strong>Part</strong></th>
+<th><strong>Qs</strong></th>
+<th><strong>Content</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Content</strong></td>
+<td>15</td>
+<td>Shapes, Numbers, Addition, Measurement, Time, Data</td>
+</tr>
+<tr>
+<td><strong>Pedagogy</strong></td>
+<td>15</td>
+<td>Logical thinking, Error analysis, Diagnostic teaching</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h3 id="-v-evs-30-qs-"><strong>V. EVS (30 Qs)</strong></h3>
+<table>
+<thead>
+<tr>
+<th><strong>Part</strong></th>
+<th><strong>Qs</strong></th>
+<th><strong>Content</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Content</strong></td>
+<td>15</td>
+<td>Family, Food, Shelter, Water, Travel</td>
+</tr>
+<tr>
+<td><strong>Pedagogy</strong></td>
+<td>15</td>
+<td>Integrated teaching, Activities, CCE</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2 id="paper-2-english-paper-2-english-">Paper 2 (English) {#paper-2-english}</h2>
+<h3 id="-exam-structure-"><strong>Exam Structure</strong></h3>
+<table>
+<thead>
+<tr>
+<th><strong>Section</strong></th>
+<th><strong>Qs</strong></th>
+<th><strong>Marks</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>CDP</td>
+<td>30</td>
+<td>30</td>
+</tr>
+<tr>
+<td>Lang I</td>
+<td>30</td>
+<td>30</td>
+</tr>
+<tr>
+<td>Lang II</td>
+<td>30</td>
+<td>30</td>
+</tr>
+<tr>
+<td>Math+Science OR Social Studies</td>
+<td>60</td>
+<td>60</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h3 id="-math-science-60-qs-"><strong>Math &amp; Science (60 Qs)</strong></h3>
+<table>
+<thead>
+<tr>
+<th><strong>Subject</strong></th>
+<th><strong>Content Qs</strong></th>
+<th><strong>Pedagogy Qs</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Math</strong></td>
+<td>20</td>
+<td>10</td>
+</tr>
+<tr>
+<td><strong>Science</strong></td>
+<td>20</td>
+<td>10</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h3 id="-social-studies-60-qs-"><strong>Social Studies (60 Qs)</strong></h3>
+<table>
+<thead>
+<tr>
+<th><strong>Part</strong></th>
+<th><strong>Qs</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Content</strong></td>
+<td>40</td>
+</tr>
+<tr>
+<td><strong>Pedagogy</strong></td>
+<td>20</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2 id="paper-1-classes-1-to-5-primary-paper-1-">Paper 1 – Classes 1 to 5 (Primary) {#paper-1}</h2>
+<h3 id="-span-style-color-d32f2f-exam-structure-span-"><span style="color:#d32f2f"><strong>Exam Structure</strong></span></h3>
+<table>
+<thead>
+<tr>
+<th><span style="color:#1976d2"><strong>Section</strong></span></th>
+<th><span style="color:#388e3c"><strong>Questions</strong></span></th>
+<th><span style="color:#f57c00"><strong>Marks</strong></span></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Child Development &amp; Pedagogy</td>
+<td>30</td>
+<td>30</td>
+</tr>
+<tr>
+<td>Language I</td>
+<td>30</td>
+<td>30</td>
+</tr>
+<tr>
+<td>Language II</td>
+<td>30</td>
+<td>30</td>
+</tr>
+<tr>
+<td>Mathematics</td>
+<td>30</td>
+<td>30</td>
+</tr>
+<tr>
+<td>Environmental Studies (EVS)</td>
+<td>30</td>
+<td>30</td>
+</tr>
+<tr>
+<td><strong>TOTAL</strong></td>
+<td><strong>150</strong></td>
+<td><strong>150</strong></td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h3 id="-span-style-color-d32f2f-i-child-development-pedagogy-30-questions-span-"><span style="color:#d32f2f"><strong>I. Child Development &amp; Pedagogy (30 Questions)</strong></span></h3>
+<table>
+<thead>
+<tr>
+<th><span style="color:#7b1fa2"><strong>Sub-section</strong></span></th>
+<th><span style="color:#c2185b"><strong>Qs</strong></span></th>
+<th><span style="color:#f57c00"><strong>Key Topics</strong></span></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>a) Child Development (Primary School Child)</strong></td>
+<td><strong>15</strong></td>
+<td><ul><li>Concept of development and its relation with learning</li><li>Principles of child development</li><li>Influence of heredity &amp; environment</li><li>Socialization processes: social world &amp; children (teacher, parents, peers)</li><li>Piaget, Kohlberg, Vygotsky: constructs and critical perspectives</li><li>Concepts of child-centered and progressive education</li><li>Critical perspective of the construct of intelligence</li><li>Multi-dimensional intelligence</li><li>Language &amp; thought</li><li>Gender as a social construct; gender roles, gender bias, educational practice</li><li>Individual differences among learners (language, caste, gender, community, religion)</li><li>Distinction between assessment for learning and assessment of learning; school-based assessment, CCE</li><li>Formulating appropriate questions for assessing readiness levels, enhancing learning and critical thinking</li></ul></td>
+</tr>
+<tr>
+<td><strong>b) Inclusive Education &amp; Special Needs</strong></td>
+<td><strong>5</strong></td>
+<td><ul><li>Addressing learners from diverse backgrounds including disadvantaged &amp; deprived</li><li>Addressing needs of children with learning difficulties, impairment, etc.</li><li>Addressing talented, creative, specially-abled learners</li></ul></td>
+</tr>
+<tr>
+<td><strong>c) Learning &amp; Pedagogy</strong></td>
+<td><strong>10</strong></td>
+<td><ul><li>How children think and learn; why children fail in school</li><li>Basic processes of teaching and learning; children’s learning strategies; learning as a social activity</li><li>Child as a problem solver and scientific investigator</li><li>Alternative conceptions of learning; understanding children’s errors as significant steps</li><li>Cognition &amp; emotions</li><li>Motivation and learning</li><li>Factors contributing to learning – personal &amp; environmental</li></ul></td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h3 id="-span-style-color-1976d2-ii-language-i-30-questions-span-"><span style="color:#1976d2"><strong>II. Language I (30 Questions)</strong></span></h3>
+<table>
+<thead>
+<tr>
+<th><span style="color:#7b1fa2"><strong>Part</strong></span></th>
+<th><span style="color:#c2185b"><strong>Qs</strong></span></th>
+<th><span style="color:#f57c00"><strong>Details</strong></span></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>a) Language Comprehension</strong></td>
+<td><strong>15</strong></td>
+<td>Two unseen prose passages (prose/drama and poem). Questions on comprehension, inference, grammar, and verbal ability.</td>
+</tr>
+<tr>
+<td><strong>b) Pedagogy of Language Development</strong></td>
+<td><strong>15</strong></td>
+<td><ul><li>Learning and acquisition</li><li>Principles of language teaching</li><li>Role of listening and speaking; function of language</li><li>Critical perspective on the role of grammar in communication</li><li>Challenges of teaching language in diverse classrooms (difficulties, errors, disorders)</li><li>Language skills (LSRW)</li><li>Evaluating language comprehension and proficiency</li><li>Teaching-learning materials (textbook, multimedia, multilingual resources)</li><li>Remedial teaching</li><li>IT as a tool in language teaching</li></ul></td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h3 id="-span-style-color-1976d2-iii-language-ii-30-questions-span-"><span style="color:#1976d2"><strong>III. Language II (30 Questions)</strong></span></h3>
+<table>
+<thead>
+<tr>
+<th><span style="color:#7b1fa2"><strong>Part</strong></span></th>
+<th><span style="color:#c2185b"><strong>Qs</strong></span></th>
+<th><span style="color:#f57c00"><strong>Details</strong></span></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>a) Comprehension</strong></td>
+<td><strong>15</strong></td>
+<td>Two unseen <em>prose</em> passages (discursive, literary, narrative, or scientific). Questions on comprehension, grammar, verbal ability.</td>
+</tr>
+<tr>
+<td><strong>b) Pedagogy of Language Development</strong></td>
+<td><strong>15</strong></td>
+<td>Same as Language I pedagogy.</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h3 id="-span-style-color-388e3c-iv-mathematics-30-questions-span-"><span style="color:#388e3c"><strong>IV. Mathematics (30 Questions)</strong></span></h3>
+<table>
+<thead>
+<tr>
+<th><span style="color:#7b1fa2"><strong>Part</strong></span></th>
+<th><span style="color:#c2185b"><strong>Qs</strong></span></th>
+<th><span style="color:#f57c00"><strong>Content</strong></span></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>a) Content</strong></td>
+<td><strong>15</strong></td>
+<td><ul><li>Geometry (basic shapes)</li><li>Shapes &amp; spatial understanding (near/far, in/out)</li><li>Solids around us (cube, sphere)</li><li>Numbers (counting, place value)</li><li>Addition and subtraction</li><li>Multiplication</li><li>Division</li><li>Measurement (length, weight, capacity)</li><li>Weight</li><li>Time (clock, calendar)</li><li>Volume</li><li>Data handling (charts/graphs)</li><li>Patterns</li><li>Money</li></ul></td>
+</tr>
+<tr>
+<td><strong>b) Pedagogical Issues</strong></td>
+<td><strong>15</strong></td>
+<td><ul><li>Nature of mathematics/logical thinking</li><li>Place of mathematics in curriculum</li><li>Language of mathematics</li><li>Community mathematics</li><li>Formal/informal evaluation</li><li>Teaching problems</li><li>Error analysis</li><li>Diagnostic and remedial teaching</li></ul></td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h3 id="-span-style-color-388e3c-v-environmental-studies-evs-30-questions-span-"><span style="color:#388e3c"><strong>V. Environmental Studies (EVS) (30 Questions)</strong></span></h3>
+<table>
+<thead>
+<tr>
+<th><span style="color:#7b1fa2"><strong>Part</strong></span></th>
+<th><span style="color:#c2185b"><strong>Qs</strong></span></th>
+<th><span style="color:#f57c00"><strong>Content</strong></span></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>a) Content</strong></td>
+<td><strong>15</strong></td>
+<td><ul><li>Family and friends (relationships, work, play, animals, plants)</li><li>Food (sources, cooking, habits)</li><li>Shelter (types of houses)</li><li>Water (sources, importance, conservation)</li><li>Travel (transport, places)</li><li>Things we make and do</li></ul></td>
+</tr>
+<tr>
+<td><strong>b) Pedagogical Issues</strong></td>
+<td><strong>15</strong></td>
+<td><ul><li>Concept and scope of EVS</li><li>Teaching as an integrated subject</li><li>Environmental studies and education</li><li>Learning principles</li><li>Relation with science &amp; social science</li><li>Approaches to presenting concepts</li><li>Activities, experiments, discussions</li><li>Continuous &amp; Comprehensive Evaluation (CCE)</li><li>Teaching materials/aids</li><li>Problems in teaching EVS</li></ul></td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2 id="paper-2-classes-6-to-8-elementary-paper-2-">Paper 2 – Classes 6 to 8 (Elementary) {#paper-2}</h2>
+<h3 id="-span-style-color-d32f2f-exam-structure-span-"><span style="color:#d32f2f"><strong>Exam Structure</strong></span></h3>
+<table>
+<thead>
+<tr>
+<th><span style="color:#1976d2"><strong>Section</strong></span></th>
+<th><span style="color:#388e3c"><strong>Questions</strong></span></th>
+<th><span style="color:#f57c00"><strong>Marks</strong></span></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Child Development &amp; Pedagogy</td>
+<td>30</td>
+<td>30</td>
+</tr>
+<tr>
+<td>Language I</td>
+<td>30</td>
+<td>30</td>
+</tr>
+<tr>
+<td>Language II</td>
+<td>30</td>
+<td>30</td>
+</tr>
+<tr>
+<td><strong>Option A: Math &amp; Science</strong></td>
+<td>60 (30+30)</td>
+<td>60</td>
+</tr>
+<tr>
+<td><strong>Option B: Social Studies/Social Science</strong></td>
+<td>60</td>
+<td>60</td>
+</tr>
+<tr>
+<td><strong>TOTAL</strong></td>
+<td><strong>150</strong></td>
+<td><strong>150</strong></td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h3 id="-span-style-color-d32f2f-i-child-development-pedagogy-30-questions-span-upper-primary-focus-"><span style="color:#d32f2f"><strong>I. Child Development &amp; Pedagogy (30 Questions)</strong></span> <em>(Upper Primary Focus)</em></h3>
+<table>
+<thead>
+<tr>
+<th><span style="color:#7b1fa2"><strong>Sub-section</strong></span></th>
+<th><span style="color:#c2185b"><strong>Qs</strong></span></th>
+<th><span style="color:#f57c00"><strong>Key Topics</strong></span></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>a) Child Development</strong></td>
+<td><strong>15</strong></td>
+<td>Same as Paper 1 but focused on ages 11–14</td>
+</tr>
+<tr>
+<td><strong>b) Inclusive Education</strong></td>
+<td><strong>5</strong></td>
+<td>Diverse backgrounds, special needs, gifted learners</td>
+</tr>
+<tr>
+<td><strong>c) Learning &amp; Pedagogy</strong></td>
+<td><strong>10</strong></td>
+<td>Critical thinking, scientific investigation, alternative conceptions</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h3 id="-span-style-color-1976d2-ii-language-i-30-questions-span-"><span style="color:#1976d2"><strong>II. Language I (30 Questions)</strong></span></h3>
+<table>
+<thead>
+<tr>
+<th><span style="color:#7b1fa2"><strong>Part</strong></span></th>
+<th><span style="color:#c2185b"><strong>Qs</strong></span></th>
+<th><span style="color:#f57c00"><strong>Details</strong></span></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>a) Language Comprehension</strong></td>
+<td><strong>15</strong></td>
+<td>Prose/drama + poem</td>
+</tr>
+<tr>
+<td><strong>b) Pedagogy</strong></td>
+<td><strong>15</strong></td>
+<td>Acquisition, LSRW, grammar, remedial teaching</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h3 id="-span-style-color-1976d2-iii-language-ii-30-questions-span-"><span style="color:#1976d2"><strong>III. Language II (30 Questions)</strong></span></h3>
+<table>
+<thead>
+<tr>
+<th><span style="color:#7b1fa2"><strong>Part</strong></span></th>
+<th><span style="color:#c2185b"><strong>Qs</strong></span></th>
+<th><span style="color:#f57c00"><strong>Details</strong></span></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>a) Comprehension</strong></td>
+<td><strong>15</strong></td>
+<td>Two prose passages</td>
+</tr>
+<tr>
+<td><strong>b) Pedagogy</strong></td>
+<td><strong>15</strong></td>
+<td>Same as Language I</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h3 id="-span-style-color-388e3c-iv-a-mathematics-science-60-questions-span-"><span style="color:#388e3c"><strong>IV. (A) Mathematics &amp; Science (60 Questions)</strong></span></h3>
+<h4 id="-mathematics-30-questions-"><strong>Mathematics (30 Questions)</strong></h4>
+<table>
+<thead>
+<tr>
+<th><span style="color:#7b1fa2"><strong>Part</strong></span></th>
+<th><span style="color:#c2185b"><strong>Qs</strong></span></th>
+<th><span style="color:#f57c00"><strong>Topics</strong></span></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>a) Content</strong></td>
+<td><strong>20</strong></td>
+<td><ul><li>Number System (integers, fractions)</li><li>Algebra (introduction, ratio &amp; proportion)</li><li>Geometry (2D/3D, symmetry, construction)</li><li>Mensuration</li><li>Data Handling</li></ul></td>
+</tr>
+<tr>
+<td><strong>b) Pedagogical Issues</strong></td>
+<td><strong>10</strong></td>
+<td><ul><li>Nature of mathematics</li><li>Place in curriculum</li><li>Language of math</li><li>Community math</li><li>Evaluation</li><li>Remedial teaching</li></ul></td>
+</tr>
+</tbody>
+</table>
+<h4 id="-science-30-questions-"><strong>Science (30 Questions)</strong></h4>
+<table>
+<thead>
+<tr>
+<th><span style="color:#7b1fa2"><strong>Part</strong></span></th>
+<th><span style="color:#c2185b"><strong>Qs</strong></span></th>
+<th><span style="color:#f57c00"><strong>Topics</strong></span></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>a) Content</strong></td>
+<td><strong>20</strong></td>
+<td><ul><li>Food (sources, components)</li><li>Materials</li><li>Living World</li><li>Moving Things, People &amp; Ideas</li><li>Electric Current &amp; Circuits, Magnets</li><li>Natural Phenomena (light, sound)</li><li>Natural Resources</li></ul></td>
+</tr>
+<tr>
+<td><strong>b) Pedagogical Issues</strong></td>
+<td><strong>10</strong></td>
+<td><ul><li>Nature &amp; structure of science</li><li>Aims &amp; objectives</li><li>Observation/experiment/discovery</li><li>Innovation</li><li>Evaluation</li><li>Remedial teaching</li></ul></td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h3 id="-span-style-color-388e3c-v-b-social-studies-social-science-60-questions-span-"><span style="color:#388e3c"><strong>V. (B) Social Studies / Social Science (60 Questions)</strong></span></h3>
+<table>
+<thead>
+<tr>
+<th><span style="color:#7b1fa2"><strong>Part</strong></span></th>
+<th><span style="color:#c2185b"><strong>Qs</strong></span></th>
+<th><span style="color:#f57c00"><strong>Topics</strong></span></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>a) Content</strong></td>
+<td><strong>40</strong></td>
+<td><ul><li><strong>History</strong>: Earliest societies, first cities, sultans, Mughal empire, company rule, freedom movement</li><li><strong>Geography</strong>: Earth in solar system, environment, resources, agriculture</li><li><strong>Civics</strong>: Diversity, government, constitution, judiciary</li></ul></td>
+</tr>
+<tr>
+<td><strong>b) Pedagogical Issues</strong></td>
+<td><strong>20</strong></td>
+<td><ul><li>Concept &amp; nature of social science</li><li>Classroom processes, activities, discourse</li><li>Critical thinking development</li><li>Inquiry/empirical evidence</li><li>Sources – primary &amp; secondary</li><li>Project work</li><li>Evaluation</li></ul></td>
+</tr>
+</tbody>
+</table>
 </body>
 </html>
